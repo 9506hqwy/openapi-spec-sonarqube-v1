@@ -1,0 +1,12 @@
+components/
+temp/
+
+!components/api_monitoring_metrics.yml
+!components/api_project_badges_measure.yml
+!components/api_project_badges_quality_gate.yml
+!components/api_qualityprofiles_backup.yml
+!components/api_qualityprofiles_export.yml
+!components/api_server_version.yml
+!components/api_sources_raw.yml
+!components/api_system_logs.yml
+!components/api_system_ping.yml

@@ -1,0 +1,13 @@
+content:
+  application/json:
+    schema:
+      properties:
+        hotspots:
+          items:
+            properties:
+              messageFormattings:
+                items:
+                  type: string
+              flows:
+                items:
+                  type: string

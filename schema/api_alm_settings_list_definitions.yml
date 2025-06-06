@@ -1,0 +1,52 @@
+content:
+  application/json:
+    schema:
+      properties:
+        azure:
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              url:
+                type: string
+              appId:
+                type: string
+              clientId:
+                type: string
+        bitbucket:
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              url:
+                type: string
+              appId:
+                type: string
+              clientId:
+                type: string
+        gitlab:
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              url:
+                type: string
+              appId:
+                type: string
+              clientId:
+                type: string
+        bitbucketcloud:
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              url:
+                type: string
+              appId:
+                type: string
+              clientId:
+                type: string

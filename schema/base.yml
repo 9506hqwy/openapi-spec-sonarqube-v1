@@ -1,0 +1,11 @@
+openapi: 3.0.3
+info:
+  title: SonarQube OpenAPI Specification
+  version: 9.9.7.0
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []

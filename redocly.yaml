@@ -1,0 +1,11 @@
+extends:
+  - recommended
+rules:
+  info-license:
+    severity: off
+  no-empty-servers:
+    severity: off
+  operation-4xx-response:
+    severity: off
+  operation-summary:
+    severity: off

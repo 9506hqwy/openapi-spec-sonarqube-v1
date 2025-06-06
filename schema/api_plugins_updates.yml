@@ -1,0 +1,20 @@
+content:
+  application/json:
+    schema:
+      properties:
+        plugins:
+          items:
+            properties:
+              updates:
+                items:
+                  properties:
+                    requires:
+                      items:
+                        type: object
+                        properties:
+                          key:
+                            type: string
+                          namme:
+                            type: string
+                          description:
+                            type: string

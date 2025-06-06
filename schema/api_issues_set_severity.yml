@@ -1,0 +1,9 @@
+content:
+  application/json:
+    schema:
+      properties:
+        issue:
+          properties:
+            flows:
+              items:
+                type: string

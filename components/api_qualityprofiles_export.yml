@@ -1,0 +1,5 @@
+description: ''
+content:
+  application/xml:
+    schema:
+      type: string

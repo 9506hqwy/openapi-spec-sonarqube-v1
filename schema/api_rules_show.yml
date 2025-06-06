@@ -1,0 +1,9 @@
+content:
+  application/json:
+    schema:
+      properties:
+        rule:
+          properties:
+            tags:
+              items:
+                type: string

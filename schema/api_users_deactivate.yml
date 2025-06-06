@@ -1,0 +1,12 @@
+content:
+  application/json:
+    schema:
+      properties:
+        user:
+          properties:
+            groups:
+              items:
+                type: string
+            scmAccounts:
+              items:
+                type: string

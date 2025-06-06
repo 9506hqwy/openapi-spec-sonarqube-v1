@@ -1,0 +1,10 @@
+content:
+  application/json:
+    schema:
+      properties:
+        rules:
+          items:
+            properties:
+              tags:
+                items:
+                  type: string

@@ -1,0 +1,11 @@
+content:
+  application/json:
+    schema:
+      properties:
+        Health Causes:
+          items:
+            type: string
+        Plugins:
+          properties:
+            name:
+              type: string
