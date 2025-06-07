@@ -73,5 +73,8 @@ do
         TEMP_PATH="${BASE_DIR}/temp/${SCHEMA_FILE%.json}.yml.tmp"
         mv -f "${SCHEMA_PATH}" "${TEMP_PATH}"
         yq ". *d load(\"${MERGE_PATH}\")" "${TEMP_PATH}" > "${SCHEMA_PATH}"
+
+        mv -f "${SCHEMA_PATH}" "${TEMP_PATH}"
+        yq 'del(.. | select(. == null))' "${TEMP_PATH}" > "${SCHEMA_PATH}"
     fi
 done

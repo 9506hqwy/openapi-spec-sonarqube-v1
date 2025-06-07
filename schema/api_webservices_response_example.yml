@@ -1,0 +1,7 @@
+content:
+  application/json:
+    schema:
+      properties:
+        example:
+          type: string
+          properties: null
