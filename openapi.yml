@@ -28,6 +28,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_integrations/list_azure_projects:
     get:
       description: |
@@ -58,6 +72,20 @@ paths:
                           type: string
                         description:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_integrations/list_bitbucketserver_projects:
     get:
       description: |
@@ -87,6 +115,20 @@ paths:
                         key:
                           type: string
                         name:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/alm_integrations/search_azure_repos:
     get:
@@ -131,6 +173,20 @@ paths:
                         name:
                           type: string
                         projectName:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/alm_integrations/search_bitbucketcloud_repos:
     get:
@@ -198,6 +254,20 @@ paths:
                           type: string
                         workspace:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_integrations/search_bitbucketserver_repos:
     get:
       description: |
@@ -249,6 +319,20 @@ paths:
                         projectKey:
                           type: string
                         workspace:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/alm_integrations/search_gitlab_repos:
     get:
@@ -318,6 +402,20 @@ paths:
                           type: string
                         url:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_integrations/set_pat:
     post:
       description: |
@@ -348,6 +446,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/count_binding:
     get:
       description: |
@@ -373,6 +485,20 @@ paths:
                     type: string
                   projects:
                     type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/create_azure:
     post:
       description: |
@@ -403,6 +529,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/create_bitbucket:
     post:
       description: |
@@ -433,6 +573,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/create_bitbucketcloud:
     post:
       description: |
@@ -470,6 +624,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/create_github:
     post:
       description: |
@@ -528,6 +696,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/create_gitlab:
     post:
       description: |
@@ -558,6 +740,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/delete:
     post:
       description: |
@@ -574,6 +770,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/get_binding:
     get:
       description: |
@@ -607,6 +817,20 @@ paths:
                     type: boolean
                   monorepo:
                     type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/list:
     get:
       description: |
@@ -638,6 +862,20 @@ paths:
                         alm:
                           type: string
                         url:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/alm_settings/list_definitions:
     get:
@@ -717,6 +955,20 @@ paths:
                           type: string
                         clientId:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/update_azure:
     post:
       description: |
@@ -754,6 +1006,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/update_bitbucket:
     post:
       description: |
@@ -791,6 +1057,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/update_bitbucketcloud:
     post:
       description: |
@@ -835,6 +1115,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/update_github:
     post:
       description: |
@@ -900,6 +1194,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/update_gitlab:
     post:
       description: |
@@ -937,6 +1245,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_settings/validate:
     get:
       description: |
@@ -953,6 +1275,20 @@ paths:
       responses:
         2XX:
           description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+        default:
+          description: Error messages
           content:
             application/json:
               schema:
@@ -988,6 +1324,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/authentication/login:
     post:
       description: |
@@ -1011,6 +1361,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/authentication/logout:
     post:
       description: |
@@ -1019,6 +1383,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/authentication/validate:
     get:
       description: |
@@ -1034,6 +1412,20 @@ paths:
                 properties:
                   valid:
                     type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/ce/activity:
     get:
       description: |
@@ -1166,6 +1558,20 @@ paths:
                         type: integer
                       total:
                         type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/ce/activity_status:
     get:
       description: |
@@ -1202,6 +1608,20 @@ paths:
                     type: integer
                   pendingTime:
                     type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/ce/component:
     get:
       description: |
@@ -1287,6 +1707,20 @@ paths:
                         type: boolean
                       hasScannerContext:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/ce/task:
     get:
       description: |
@@ -1356,6 +1790,20 @@ paths:
                         type: string
                       hasScannerContext:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/components/search:
     get:
       description: |
@@ -1419,6 +1867,20 @@ paths:
                         name:
                           type: string
                         project:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/components/show:
     get:
@@ -1490,6 +1952,20 @@ paths:
                         analysisDate:
                           type: string
                         version:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/components/tree:
     get:
@@ -1614,6 +2090,20 @@ paths:
                           type: string
                         language:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/duplications/show:
     get:
       description: |
@@ -1681,6 +2171,20 @@ paths:
                             type: string
                           projectName:
                             type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/favorites/add:
     post:
       description: |
@@ -1697,6 +2201,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/favorites/remove:
     post:
       description: |
@@ -1713,6 +2231,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/favorites/search:
     get:
       description: |
@@ -1760,6 +2292,20 @@ paths:
                         name:
                           type: string
                         qualifier:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/hotspots/search:
     get:
@@ -2003,6 +2549,20 @@ paths:
                           type: string
                         path:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/hotspots/show:
     get:
       description: |
@@ -2142,6 +2702,20 @@ paths:
                           type: boolean
                   canChangeStatus:
                     type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/add_comment:
     post:
       description: |
@@ -2329,6 +2903,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/assign:
     post:
       description: |
@@ -2508,6 +3096,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/authors:
     get:
       description: |
@@ -2547,6 +3149,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/bulk_change:
     post:
       description: |
@@ -2632,6 +3248,20 @@ paths:
                     type: integer
                   failures:
                     type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/changelog:
     get:
       description: |
@@ -2683,6 +3313,20 @@ paths:
                                 type: string
                               oldValue:
                                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/delete_comment:
     post:
       description: |
@@ -2855,6 +3499,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/do_transition:
     post:
       description: |
@@ -3034,6 +3692,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/edit_comment:
     post:
       description: |
@@ -3213,6 +3885,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/reindex:
     post:
       description: |
@@ -3229,6 +3915,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/search:
     get:
       description: |
@@ -3699,6 +4399,20 @@ paths:
                           type: boolean
                         avatar:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/set_severity:
     post:
       description: |
@@ -3878,6 +4592,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/set_tags:
     post:
       description: |
@@ -4061,6 +4789,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/set_type:
     post:
       description: |
@@ -4240,6 +4982,20 @@ paths:
                           type: string
                         active:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/issues/tags:
     get:
       description: |
@@ -4293,6 +5049,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/languages/list:
     get:
       description: |
@@ -4329,6 +5099,20 @@ paths:
                         key:
                           type: string
                         name:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/measures/component:
     get:
@@ -4431,6 +5215,20 @@ paths:
                         type: string
                       parameter:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/measures/component_tree:
     get:
       description: |
@@ -4637,6 +5435,20 @@ paths:
                         type: string
                       parameter:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/measures/search_history:
     get:
       description: |
@@ -4732,6 +5544,20 @@ paths:
                                 type: string
                               value:
                                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/metrics/search:
     get:
       description: |
@@ -4794,6 +5620,20 @@ paths:
                         type: integer
                       pageIndex:
                         type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/metrics/types:
     get:
       description: |
@@ -4811,6 +5651,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/monitoring/metrics:
     get:
       description: |
@@ -4823,6 +5677,20 @@ paths:
             text/plain:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/new_code_periods/list:
     get:
       description: |
@@ -4858,6 +5726,20 @@ paths:
                         value:
                           type: string
                         effectiveValue:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/new_code_periods/set:
     post:
@@ -4896,6 +5778,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/new_code_periods/show:
     get:
       description: |
@@ -4932,6 +5828,20 @@ paths:
                     type: string
                   inherited:
                     type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/new_code_periods/unset:
     post:
       description: |
@@ -4955,6 +5865,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/notifications/add:
     post:
       description: |
@@ -4992,6 +5916,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/notifications/list:
     get:
       description: |
@@ -5034,6 +5972,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/notifications/remove:
     post:
       description: |
@@ -5071,6 +6023,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/add_group:
     post:
       description: |
@@ -5115,6 +6081,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/add_group_to_template:
     post:
       description: |
@@ -5159,6 +6139,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/add_project_creator_to_template:
     post:
       description: |
@@ -5189,6 +6183,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/add_user:
     post:
       description: |
@@ -5226,6 +6234,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/add_user_to_template:
     post:
       description: |
@@ -5263,6 +6285,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/apply_template:
     post:
       description: |
@@ -5300,6 +6336,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/bulk_apply_template:
     post:
       description: |
@@ -5358,6 +6408,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/create_template:
     post:
       description: |
@@ -5402,6 +6466,20 @@ paths:
                         type: string
                       projectKeyPattern:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/delete_template:
     post:
       description: |
@@ -5425,6 +6503,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/remove_group:
     post:
       description: |
@@ -5469,6 +6561,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/remove_group_from_template:
     post:
       description: |
@@ -5513,6 +6619,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/remove_project_creator_from_template:
     post:
       description: |
@@ -5543,6 +6663,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/remove_user:
     post:
       description: |
@@ -5580,6 +6714,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/remove_user_from_template:
     post:
       description: |
@@ -5617,6 +6765,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/search_templates:
     get:
       description: |
@@ -5675,6 +6837,20 @@ paths:
                           type: string
                         qualifier:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/set_default_template:
     post:
       description: |
@@ -5705,6 +6881,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/permissions/update_template:
     post:
       description: |
@@ -5762,6 +6952,20 @@ paths:
                         type: string
                       updatedAt:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/available:
     get:
       description: |
@@ -5823,6 +7027,20 @@ paths:
                                     type: string
                   updateCenterRefresh:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/cancel_all:
     post:
       description: |
@@ -5831,6 +7049,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/install:
     post:
       description: |
@@ -5847,6 +7079,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/installed:
     get:
       description: |
@@ -5905,6 +7151,20 @@ paths:
                           type: string
                         updatedAt:
                           type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/pending:
     get:
       description: |
@@ -6003,6 +7263,20 @@ paths:
                           type: string
                         documentationPath:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/uninstall:
     post:
       description: |
@@ -6019,6 +7293,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/update:
     post:
       description: |
@@ -6035,6 +7323,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/plugins/updates:
     get:
       description: |
@@ -6100,6 +7402,20 @@ paths:
                                       type: string
                                     description:
                                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/create_event:
     post:
       description: |
@@ -6146,6 +7462,20 @@ paths:
                         type: string
                       name:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/delete:
     post:
       description: |
@@ -6162,6 +7492,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/delete_event:
     post:
       description: |
@@ -6178,6 +7522,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/search:
     get:
       description: |
@@ -6271,6 +7629,20 @@ paths:
                                 type: string
                               name:
                                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/set_baseline:
     post:
       description: |
@@ -6301,6 +7673,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/unset_baseline:
     post:
       description: |
@@ -6324,6 +7710,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_analyses/update_event:
     post:
       description: |
@@ -6363,6 +7763,20 @@ paths:
                         type: string
                       name:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_badges/measure:
     get:
       description: |
@@ -6404,6 +7818,20 @@ paths:
             image/svg+xml:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_badges/quality_gate:
     get:
       description: |
@@ -6438,6 +7866,20 @@ paths:
             image/svg+xml:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_badges/renew_token:
     post:
       description: |
@@ -6454,6 +7896,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_badges/token:
     get:
       description: |
@@ -6477,6 +7933,20 @@ paths:
                 properties:
                   token:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_branches/delete:
     post:
       description: |
@@ -6500,6 +7970,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_branches/list:
     get:
       description: |
@@ -6541,6 +8025,20 @@ paths:
                           type: string
                         excludedFromPurge:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_branches/rename:
     post:
       description: |
@@ -6564,6 +8062,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_branches/set_automatic_deletion_protection:
     post:
       description: |
@@ -6594,6 +8106,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_dump/export:
     post:
       description: |
@@ -6623,6 +8149,20 @@ paths:
                     type: string
                   projectName:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_links/create:
     post:
       description: |
@@ -6674,6 +8214,20 @@ paths:
                         type: string
                       url:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_links/delete:
     post:
       description: |
@@ -6690,6 +8244,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_links/search:
     get:
       description: |
@@ -6731,6 +8299,20 @@ paths:
                           type: string
                         url:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_tags/search:
     get:
       description: |
@@ -6770,6 +8352,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/project_tags/set:
     post:
       description: |
@@ -6793,6 +8389,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/bulk_delete:
     post:
       description: |
@@ -6837,6 +8447,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/create:
     post:
       description: |
@@ -6888,6 +8512,20 @@ paths:
                         type: string
                       qualifier:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/delete:
     post:
       description: |
@@ -6904,6 +8542,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/search:
     get:
       description: |
@@ -6993,6 +8645,20 @@ paths:
                           type: string
                         revision:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/update_key:
     post:
       description: |
@@ -7016,6 +8682,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/projects/update_visibility:
     post:
       description: |
@@ -7039,6 +8719,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/copy:
     post:
       description: |
@@ -7069,6 +8763,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/create:
     post:
       description: |
@@ -7094,6 +8802,20 @@ paths:
                     type: string
                   name:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/create_condition:
     post:
       description: |
@@ -7153,6 +8875,20 @@ paths:
                     type: string
                   warning:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/delete_condition:
     post:
       description: |
@@ -7169,6 +8905,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/deselect:
     post:
       description: |
@@ -7185,6 +8935,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/destroy:
     post:
       description: |
@@ -7208,6 +8972,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/get_by_project:
     get:
       description: |
@@ -7238,6 +9016,20 @@ paths:
                         type: string
                       default:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/list:
     get:
       description: |
@@ -7290,6 +9082,20 @@ paths:
                     properties:
                       create:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/project_status:
     get:
       description: |
@@ -7387,6 +9193,20 @@ paths:
                             type: string
                           parameter:
                             type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/rename:
     post:
       description: |
@@ -7417,6 +9237,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/search:
     get:
       description: |
@@ -7493,6 +9327,20 @@ paths:
                           type: string
                         selected:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/select:
     post:
       description: |
@@ -7523,6 +9371,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/set_as_default:
     post:
       description: |
@@ -7546,6 +9408,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/show:
     get:
       description: |
@@ -7612,6 +9488,20 @@ paths:
                         type: boolean
                   caycStatus:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/update_condition:
     post:
       description: |
@@ -7649,6 +9539,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/activate_rule:
     post:
       description: |
@@ -7693,6 +9597,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/activate_rules:
     post:
       description: |
@@ -7870,6 +9788,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/add_project:
     post:
       description: |
@@ -7900,6 +9832,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/backup:
     get:
       description: |
@@ -7927,6 +9873,20 @@ paths:
             application/xml:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/change_parent:
     post:
       description: |
@@ -7957,6 +9917,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/changelog:
     get:
       description: |
@@ -8044,6 +10018,20 @@ paths:
                           properties:
                             severity:
                               type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/copy:
     post:
       description: |
@@ -8084,6 +10072,20 @@ paths:
                     type: boolean
                   parentKey:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/create:
     post:
       description: |
@@ -8131,6 +10133,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/deactivate_rule:
     post:
       description: |
@@ -8154,6 +10170,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/deactivate_rules:
     post:
       description: |
@@ -8324,6 +10354,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/delete:
     post:
       description: |
@@ -8347,6 +10391,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/export:
     get:
       description: |
@@ -8381,6 +10439,20 @@ paths:
             application/xml:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/exporters:
     get:
       description: |
@@ -8407,6 +10479,20 @@ paths:
                           type: array
                           items:
                             type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/importers:
     get:
       description: |
@@ -8433,6 +10519,20 @@ paths:
                           type: array
                           items:
                             type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/inheritance:
     get:
       description: |
@@ -8504,6 +10604,20 @@ paths:
                           type: integer
                         isBuiltIn:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/projects:
     get:
       description: |
@@ -8575,6 +10689,20 @@ paths:
                           type: string
                         selected:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/remove_project:
     post:
       description: |
@@ -8605,6 +10733,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/rename:
     post:
       description: |
@@ -8628,6 +10770,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/restore:
     post:
       description: |
@@ -8644,6 +10800,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/search:
     get:
       description: |
@@ -8731,6 +10901,20 @@ paths:
                     properties:
                       create:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualityprofiles/set_default:
     post:
       description: |
@@ -8754,6 +10938,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/create:
     post:
       description: |
@@ -8881,6 +11079,20 @@ paths:
                         type: boolean
                       type:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/delete:
     post:
       description: |
@@ -8897,6 +11109,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/repositories:
     get:
       description: |
@@ -8935,6 +11161,20 @@ paths:
                         name:
                           type: string
                         language:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
                           type: string
   /api/rules/search:
     get:
@@ -9290,6 +11530,20 @@ paths:
                                 type: string
                               count:
                                 type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/show:
     get:
       description: |
@@ -9411,6 +11665,20 @@ paths:
                                 type: string
                               value:
                                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/tags:
     get:
       description: |
@@ -9443,6 +11711,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/rules/update:
     post:
       description: |
@@ -9592,6 +11874,20 @@ paths:
                         type: boolean
                       type:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/server/version:
     get:
       description: |
@@ -9604,6 +11900,20 @@ paths:
             text/plain:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/settings/list_definitions:
     get:
       description: |
@@ -9667,6 +11977,20 @@ paths:
                                 type: array
                                 items:
                                   type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/settings/reset:
     post:
       description: |
@@ -9690,6 +12014,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/settings/set:
     post:
       description: |
@@ -9734,6 +12072,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/settings/values:
     get:
       description: |
@@ -9777,6 +12129,20 @@ paths:
                     type: array
                     items:
                       type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/sources/raw:
     get:
       description: |
@@ -9797,6 +12163,20 @@ paths:
             text/plain:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/sources/scm:
     get:
       description: |
@@ -9844,6 +12224,20 @@ paths:
                     items:
                       type: array
                       items: {}
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/sources/show:
     get:
       description: |
@@ -9884,6 +12278,20 @@ paths:
                     items:
                       type: array
                       items: {}
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/change_log_level:
     post:
       description: |
@@ -9900,6 +12308,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/db_migration_status:
     get:
       description: |
@@ -9919,6 +12341,20 @@ paths:
                     type: string
                   startedAt:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/health:
     get:
       description: |
@@ -9965,6 +12401,20 @@ paths:
                             properties:
                               message:
                                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/info:
     get:
       description: |
@@ -10748,6 +13198,20 @@ paths:
                         type: string
                       Default New Code Definition:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/logs:
     get:
       description: |
@@ -10768,6 +13232,20 @@ paths:
             text/plain:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/migrate_db:
     post:
       description: |
@@ -10787,6 +13265,20 @@ paths:
                     type: string
                   startedAt:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/ping:
     get:
       description: |
@@ -10799,6 +13291,20 @@ paths:
             text/plain:
               schema:
                 type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/restart:
     post:
       description: |
@@ -10807,6 +13313,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/status:
     get:
       description: |
@@ -10826,6 +13346,20 @@ paths:
                     type: string
                   status:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/system/upgrades:
     get:
       description: |
@@ -10907,6 +13441,20 @@ paths:
                     type: string
                   updateCenterRefresh:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/add_user:
     post:
       description: |
@@ -10937,6 +13485,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/create:
     post:
       description: |
@@ -10980,6 +13542,20 @@ paths:
                         type: integer
                       default:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/delete:
     post:
       description: |
@@ -11003,6 +13579,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/remove_user:
     post:
       description: |
@@ -11033,6 +13623,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/search:
     get:
       description: |
@@ -11099,6 +13703,20 @@ paths:
                           type: integer
                         default:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/update:
     post:
       description: |
@@ -11136,6 +13754,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_groups/users:
     get:
       description: |
@@ -11212,6 +13844,20 @@ paths:
                         type: integer
                       total:
                         type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_tokens/generate:
     post:
       description: |
@@ -11273,6 +13919,20 @@ paths:
                     type: string
                   type:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_tokens/revoke:
     post:
       description: |
@@ -11296,6 +13956,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/user_tokens/search:
     get:
       description: |
@@ -11330,6 +14004,20 @@ paths:
                           type: string
                         type:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/anonymize:
     post:
       description: |
@@ -11346,6 +14034,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/change_password:
     post:
       description: |
@@ -11376,6 +14078,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/create:
     post:
       description: |
@@ -11449,6 +14165,20 @@ paths:
                         type: boolean
                       local:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/deactivate:
     post:
       description: |
@@ -11496,6 +14226,20 @@ paths:
                         type: array
                         items:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/dismiss_sonarlint_ad:
     post:
       description: |
@@ -11504,6 +14248,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/groups:
     get:
       description: |
@@ -11577,6 +14335,20 @@ paths:
                           type: boolean
                         default:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/search:
     get:
       description: |
@@ -11662,6 +14434,20 @@ paths:
                           type: string
                         avatar:
                           type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/update:
     post:
       description: |
@@ -11721,6 +14507,20 @@ paths:
                         type: boolean
                       local:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/update_identity_provider:
     post:
       description: |
@@ -11751,6 +14551,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/users/update_login:
     post:
       description: |
@@ -11774,6 +14588,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/create:
     post:
       description: |
@@ -11827,6 +14655,20 @@ paths:
                         type: string
                       hasSecret:
                         type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/delete:
     post:
       description: |
@@ -11843,6 +14685,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/deliveries:
     get:
       description: |
@@ -11924,6 +14780,20 @@ paths:
                           type: integer
                         durationMs:
                           type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/delivery:
     get:
       description: |
@@ -11968,6 +14838,20 @@ paths:
                         type: integer
                       payload:
                         type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/list:
     get:
       description: |
@@ -12002,6 +14886,20 @@ paths:
                           type: string
                         hasSecret:
                           type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webhooks/update:
     post:
       description: |
@@ -12039,6 +14937,20 @@ paths:
       responses:
         2XX:
           description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webservices/list:
     get:
       description: |
@@ -12112,6 +15024,20 @@ paths:
                                       type: boolean
                                     maximumValue:
                                       type: integer
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/webservices/response_example:
     get:
       description: |
@@ -12144,6 +15070,20 @@ paths:
                     type: string
                   example:
                     type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
 components:
   securitySchemes:
     BasicAuth:

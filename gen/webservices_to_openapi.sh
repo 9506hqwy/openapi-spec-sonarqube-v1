@@ -61,6 +61,20 @@ do
 			else
 				echo "          description: not provided"
 			fi
+			echo "        default:"
+			echo "          description: Error messages"
+			echo "          content:"
+			echo "            application/json:"
+			echo "              schema:"
+			echo "                type: object"
+			echo "                properties:"
+			echo "                  errors:"
+			echo "                    type: array"
+			echo "                    items:"
+			echo "                      type: object"
+			echo "                      properties:"
+			echo "                        msg:"
+			echo "                          type: string"
 		fi
     done
 done
