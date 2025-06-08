@@ -1,0 +1,8 @@
+content:
+  application/json:
+    schema:
+      properties:
+        id:
+          type: string
+        caycStatus:
+          type: string

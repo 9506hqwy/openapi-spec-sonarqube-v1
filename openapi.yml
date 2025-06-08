@@ -1960,7 +1960,32 @@ paths:
                         flows:
                           type: array
                           items:
-                            type: string
+                            type: object
+                            properties:
+                              locations:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    component:
+                                      type: string
+                                    textRange:
+                                      type: object
+                                      properties:
+                                        startLine:
+                                          type: integer
+                                        endLine:
+                                          type: integer
+                                        startOffset:
+                                          type: integer
+                                        endOffset:
+                                          type: integer
+                                    msg:
+                                      type: string
+                                    msgFormattings:
+                                      type: array
+                                      items:
+                                        type: string
                         ruleKey:
                           type: string
                   components:
@@ -2174,7 +2199,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -2224,6 +2274,14 @@ paths:
                         type: string
                       ruleDescriptionContextKey:
                         type: string
+                      scope:
+                        type: string
+                      quickFixAvailable:
+                        type: boolean
+                      msgFormattings:
+                        type: array
+                        items:
+                          type: string
                   components:
                     type: array
                     items:
@@ -2328,7 +2386,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -2650,7 +2733,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -2804,7 +2912,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -2958,7 +3091,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -3598,7 +3756,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -3752,7 +3935,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -3910,7 +4118,32 @@ paths:
                       flows:
                         type: array
                         items:
-                          type: string
+                          type: object
+                          properties:
+                            locations:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  component:
+                                    type: string
+                                  textRange:
+                                    type: object
+                                    properties:
+                                      startLine:
+                                        type: integer
+                                      endLine:
+                                        type: integer
+                                      startOffset:
+                                        type: integer
+                                      endOffset:
+                                        type: integer
+                                  msg:
+                                    type: string
+                                  msgFormattings:
+                                    type: array
+                                    items:
+                                      type: string
                       status:
                         type: string
                       message:
@@ -7342,7 +7575,7 @@ paths:
                 type: object
                 properties:
                   id:
-                    type: integer
+                    type: string
                   name:
                     type: string
                   conditions:
@@ -7377,6 +7610,8 @@ paths:
                         type: boolean
                       delegate:
                         type: boolean
+                  caycStatus:
+                    type: string
   /api/qualitygates/update_condition:
     post:
       description: |
@@ -9608,8 +9843,7 @@ paths:
                     type: array
                     items:
                       type: array
-                      items:
-                        type: integer
+                      items: {}
   /api/sources/show:
     get:
       description: |
@@ -9649,8 +9883,7 @@ paths:
                     type: array
                     items:
                       type: array
-                      items:
-                        type: integer
+                      items: {}
   /api/system/change_log_level:
     post:
       description: |
@@ -11335,7 +11568,7 @@ paths:
                       type: object
                       properties:
                         id:
-                          type: integer
+                          type: string
                         name:
                           type: string
                         description:

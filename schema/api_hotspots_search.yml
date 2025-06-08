@@ -10,4 +10,29 @@ content:
                   type: string
               flows:
                 items:
-                  type: string
+                  type: object
+                  properties:
+                    locations:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          component:
+                            type: string
+                          textRange:
+                            type: object
+                            properties:
+                              startLine:
+                                type: integer
+                              endLine:
+                                type: integer
+                              startOffset:
+                                type: integer
+                              endOffset:
+                                type: integer
+                          msg:
+                            type: string
+                          msgFormattings:
+                            type: array
+                            items:
+                              type: string
