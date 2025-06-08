@@ -26,7 +26,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_integrations/list_azure_projects:
     get:
@@ -42,7 +42,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -72,7 +72,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -116,7 +116,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -167,7 +167,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -226,7 +226,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -285,7 +285,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -346,7 +346,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/count_binding:
     get:
@@ -362,7 +362,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -401,7 +401,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/create_bitbucket:
     post:
@@ -431,7 +431,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/create_bitbucketcloud:
     post:
@@ -468,7 +468,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/create_github:
     post:
@@ -526,7 +526,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/create_gitlab:
     post:
@@ -556,7 +556,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/delete:
     post:
@@ -572,7 +572,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/get_binding:
     get:
@@ -588,7 +588,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -621,7 +621,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -645,7 +645,7 @@ paths:
         List DevOps Platform Settings, sorted by created date.<br/>Requires the 'Administer System' permission 
       operationId: api-alm_settings-list_definitions
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -752,7 +752,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/update_bitbucket:
     post:
@@ -789,7 +789,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/update_bitbucketcloud:
     post:
@@ -833,7 +833,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/update_github:
     post:
@@ -898,7 +898,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/update_gitlab:
     post:
@@ -935,7 +935,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/alm_settings/validate:
     get:
@@ -951,7 +951,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -986,7 +986,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/authentication/login:
     post:
@@ -1009,7 +1009,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/authentication/logout:
     post:
@@ -1017,7 +1017,7 @@ paths:
         Logout a user. 
       operationId: api-authentication-logout
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/authentication/validate:
     get:
@@ -1025,7 +1025,7 @@ paths:
         Check credentials. 
       operationId: api-authentication-validate
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1111,7 +1111,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1187,7 +1187,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1216,7 +1216,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1308,7 +1308,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1391,7 +1391,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1448,7 +1448,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1568,7 +1568,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1628,7 +1628,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1695,7 +1695,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/favorites/remove:
     post:
@@ -1711,7 +1711,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/favorites/search:
     get:
@@ -1734,7 +1734,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -1908,7 +1908,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2017,7 +2017,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2163,7 +2163,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2350,7 +2350,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2536,7 +2536,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2617,7 +2617,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2646,7 +2646,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2697,7 +2697,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -2876,7 +2876,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -3055,7 +3055,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -3227,7 +3227,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/issues/search:
     get:
@@ -3509,7 +3509,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -3720,7 +3720,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -3899,7 +3899,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4082,7 +4082,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4282,7 +4282,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4314,7 +4314,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4372,7 +4372,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4543,7 +4543,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4700,7 +4700,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4753,7 +4753,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4800,7 +4800,7 @@ paths:
         List all available metric types. 
       operationId: api-metrics-types
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4817,7 +4817,7 @@ paths:
         Return monitoring metrics in Prometheus format. Support content type 'text/plain' (default) and 'application/openmetrics-text'. this endpoint can be access using a Bearer token, that needs to be defined in sonar.properties with the 'sonar.web.systemPasscode' key. 
       operationId: api-monitoring-metrics
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             text/plain:
@@ -4837,7 +4837,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4894,7 +4894,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/new_code_periods/show:
     get:
@@ -4917,7 +4917,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -4953,7 +4953,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/notifications/add:
     post:
@@ -4990,7 +4990,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/notifications/list:
     get:
@@ -5006,7 +5006,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5069,7 +5069,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/add_group:
     post:
@@ -5113,7 +5113,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/add_group_to_template:
     post:
@@ -5157,7 +5157,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/add_project_creator_to_template:
     post:
@@ -5187,7 +5187,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/add_user:
     post:
@@ -5224,7 +5224,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/add_user_to_template:
     post:
@@ -5261,7 +5261,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/apply_template:
     post:
@@ -5298,7 +5298,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/bulk_apply_template:
     post:
@@ -5356,7 +5356,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/create_template:
     post:
@@ -5386,7 +5386,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5423,7 +5423,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/remove_group:
     post:
@@ -5467,7 +5467,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/remove_group_from_template:
     post:
@@ -5511,7 +5511,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/remove_project_creator_from_template:
     post:
@@ -5541,7 +5541,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/remove_user:
     post:
@@ -5578,7 +5578,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/remove_user_from_template:
     post:
@@ -5615,7 +5615,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/search_templates:
     get:
@@ -5631,7 +5631,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5703,7 +5703,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/permissions/update_template:
     post:
@@ -5740,7 +5740,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5768,7 +5768,7 @@ paths:
         Get the list of all the plugins available for installation on the SonarQube instance, sorted by plugin name.<br/>Plugin information is retrieved from Update Center. Date and time at which Update Center was last refreshed is provided in the response.<br/>Update status values are: <ul><li>COMPATIBLE: plugin is compatible with current SonarQube instance.</li><li>INCOMPATIBLE: plugin is not compatible with current SonarQube instance.</li><li>REQUIRES_SYSTEM_UPGRADE: plugin requires SonarQube to be upgraded before being installed.</li><li>DEPS_REQUIRE_SYSTEM_UPGRADE: at least one plugin on which the plugin is dependent requires SonarQube to be upgraded.</li></ul>Require 'Administer System' permission. 
       operationId: api-plugins-available
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5829,7 +5829,7 @@ paths:
         Cancels any operation pending on any plugin (install, update or uninstall)<br/>Requires user to be authenticated with Administer System permissions 
       operationId: api-plugins-cancel_all
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/plugins/install:
     post:
@@ -5845,7 +5845,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/plugins/installed:
     get:
@@ -5861,7 +5861,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -5911,7 +5911,7 @@ paths:
         Get the list of plugins which will either be installed or removed at the next startup of the SonarQube instance, sorted by plugin name.<br/>Require 'Administer System' permission. 
       operationId: api-plugins-pending
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6017,7 +6017,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/plugins/update:
     post:
@@ -6033,7 +6033,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/plugins/updates:
     get:
@@ -6041,7 +6041,7 @@ paths:
         Lists plugins installed on the SonarQube instance for which at least one newer version is available, sorted by plugin name.<br/>Each newer version is listed, ordered from the oldest to the newest, with its own update/compatibility status.<br/>Plugin information is retrieved from Update Center. Date and time at which Update Center was last refreshed is provided in the response.<br/>Update status values are: [COMPATIBLE, INCOMPATIBLE, REQUIRES_UPGRADE, DEPS_REQUIRE_UPGRADE].<br/>Require 'Administer System' permission. 
       operationId: api-plugins-updates
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6128,7 +6128,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6160,7 +6160,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_analyses/delete_event:
     post:
@@ -6176,7 +6176,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_analyses/search:
     get:
@@ -6227,7 +6227,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6299,7 +6299,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_analyses/unset_baseline:
     post:
@@ -6322,7 +6322,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_analyses/update_event:
     post:
@@ -6345,7 +6345,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6398,7 +6398,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             image/svg+xml:
@@ -6432,7 +6432,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             image/svg+xml:
@@ -6452,7 +6452,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_badges/token:
     get:
@@ -6468,7 +6468,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6498,7 +6498,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_branches/list:
     get:
@@ -6514,7 +6514,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6562,7 +6562,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_branches/set_automatic_deletion_protection:
     post:
@@ -6592,7 +6592,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_dump/export:
     post:
@@ -6608,7 +6608,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6658,7 +6658,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6688,7 +6688,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/project_links/search:
     get:
@@ -6711,7 +6711,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6759,7 +6759,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6791,7 +6791,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/projects/bulk_delete:
     post:
@@ -6835,7 +6835,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/projects/create:
     post:
@@ -6872,7 +6872,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -6902,7 +6902,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/projects/search:
     get:
@@ -6960,7 +6960,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7014,7 +7014,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/projects/update_visibility:
     post:
@@ -7037,7 +7037,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/copy:
     post:
@@ -7067,7 +7067,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/create:
     post:
@@ -7083,7 +7083,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7136,7 +7136,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7167,7 +7167,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/deselect:
     post:
@@ -7183,7 +7183,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/destroy:
     post:
@@ -7206,7 +7206,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/get_by_project:
     get:
@@ -7222,7 +7222,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7244,7 +7244,7 @@ paths:
         Get a list of quality gates 
       operationId: api-qualitygates-list
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7332,7 +7332,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7415,7 +7415,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/search:
     get:
@@ -7466,7 +7466,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7521,7 +7521,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/set_as_default:
     post:
@@ -7544,7 +7544,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualitygates/show:
     get:
@@ -7567,7 +7567,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -7647,7 +7647,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/activate_rule:
     post:
@@ -7691,7 +7691,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/activate_rules:
     post:
@@ -7868,7 +7868,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/add_project:
     post:
@@ -7898,7 +7898,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/backup:
     get:
@@ -7921,7 +7921,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/xml:
@@ -7955,7 +7955,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/changelog:
     get:
@@ -8006,7 +8006,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8065,7 +8065,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8105,7 +8105,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8152,7 +8152,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/deactivate_rules:
     post:
@@ -8322,7 +8322,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/delete:
     post:
@@ -8345,7 +8345,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/export:
     get:
@@ -8375,7 +8375,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/xml:
@@ -8387,7 +8387,7 @@ paths:
         Lists available profile export formats. 
       operationId: api-qualityprofiles-exporters
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8413,7 +8413,7 @@ paths:
         List supported importers. 
       operationId: api-qualityprofiles-importers
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8454,7 +8454,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8546,7 +8546,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8603,7 +8603,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/rename:
     post:
@@ -8626,7 +8626,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/restore:
     post:
@@ -8642,7 +8642,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/qualityprofiles/search:
     get:
@@ -8679,7 +8679,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8752,7 +8752,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/rules/create:
     post:
@@ -8824,7 +8824,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -8895,7 +8895,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/rules/repositories:
     get:
@@ -8918,7 +8918,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9132,7 +9132,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9311,7 +9311,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9432,7 +9432,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9527,7 +9527,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9598,7 +9598,7 @@ paths:
         Version of SonarQube in plain text 
       operationId: api-server-version
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             text/plain:
@@ -9618,7 +9618,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9688,7 +9688,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/settings/set:
     post:
@@ -9732,7 +9732,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/settings/values:
     get:
@@ -9755,7 +9755,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9791,7 +9791,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             text/plain:
@@ -9832,7 +9832,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9872,7 +9872,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9898,7 +9898,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/system/db_migration_status:
     get:
@@ -9906,7 +9906,7 @@ paths:
         Display the database migration status of SonarQube.<br/>State values are:<ul><li>NO_MIGRATION: DB is up to date with current version of SonarQube.</li><li>NOT_SUPPORTED: Migration is not supported on embedded databases.</li><li>MIGRATION_RUNNING: DB migration is under go.</li><li>MIGRATION_SUCCEEDED: DB migration has run and has been successful.</li><li>MIGRATION_FAILED: DB migration has run and failed. SonarQube must be restarted in order to retry a DB migration (optionally after DB has been restored from backup).</li><li>MIGRATION_REQUIRED: DB migration is required.</li></ul> 
       operationId: api-system-db_migration_status
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9925,7 +9925,7 @@ paths:
         Provide health status of SonarQube.<p>Although global health is calculated based on both application and search nodes, detailed information is returned only for application nodes.</p><p> <ul> <li>GREEN: SonarQube is fully operational</li> <li>YELLOW: SonarQube is usable, but it needs attention in order to be fully operational</li> <li>RED: SonarQube is not operational</li> </ul></p> 
       operationId: api-system-health
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -9971,7 +9971,7 @@ paths:
         Get detailed information about system configuration.<br/>Requires 'Administer' permissions. 
       operationId: api-system-info
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -10762,7 +10762,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             text/plain:
@@ -10774,7 +10774,7 @@ paths:
         Migrate the database to match the current version of SonarQube.<br/>Sending a POST request to this URL starts the DB migration. It is strongly advised to <strong>make a database backup</strong> before invoking this WS.<br/>State values are:<ul><li>NO_MIGRATION: DB is up to date with current version of SonarQube.</li><li>NOT_SUPPORTED: Migration is not supported on embedded databases.</li><li>MIGRATION_RUNNING: DB migration is under go.</li><li>MIGRATION_SUCCEEDED: DB migration has run and has been successful.</li><li>MIGRATION_FAILED: DB migration has run and failed. SonarQube must be restarted in order to retry a DB migration (optionally after DB has been restored from backup).</li><li>MIGRATION_REQUIRED: DB migration is required.</li></ul> 
       operationId: api-system-migrate_db
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -10793,7 +10793,7 @@ paths:
         Answers "pong" as plain-text 
       operationId: api-system-ping
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             text/plain:
@@ -10805,7 +10805,7 @@ paths:
         Restarts server. Requires 'Administer System' permission. Performs a full restart of the Web, Search and Compute Engine Servers processes. Does not reload sonar.properties. 
       operationId: api-system-restart
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/system/status:
     get:
@@ -10813,7 +10813,7 @@ paths:
         Get state information about SonarQube.<p>status: the running status <ul> <li>STARTING: SonarQube Web Server is up and serving some Web Services (eg. api/system/status) but initialization is still ongoing</li> <li>UP: SonarQube instance is up and running</li> <li>DOWN: SonarQube instance is up but not running because migration has failed (refer to WS /api/system/migrate_db for details) or some other reason (check logs).</li> <li>RESTARTING: SonarQube instance is still up but a restart has been requested (refer to WS /api/system/restart for details).</li> <li>DB_MIGRATION_NEEDED: database migration is required. DB migration can be started using WS /api/system/migrate_db.</li> <li>DB_MIGRATION_RUNNING: DB migration is running (refer to WS /api/system/migrate_db for details)</li> </ul></p> 
       operationId: api-system-status
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -10832,7 +10832,7 @@ paths:
         Lists available upgrades for the SonarQube instance (if any) and for each one, lists incompatible plugins and plugins requiring upgrade.<br/>Plugin information is retrieved from Update Center. Date and time at which Update Center was last refreshed is provided in the response. 
       operationId: api-system-upgrades
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -10935,7 +10935,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/user_groups/create:
     post:
@@ -10958,7 +10958,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11001,7 +11001,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/user_groups/remove_user:
     post:
@@ -11031,7 +11031,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/user_groups/search:
     get:
@@ -11068,7 +11068,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11134,7 +11134,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/user_groups/users:
     get:
@@ -11185,7 +11185,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11254,7 +11254,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11294,7 +11294,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/user_tokens/search:
     get:
@@ -11310,7 +11310,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11344,7 +11344,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/users/change_password:
     post:
@@ -11374,7 +11374,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/users/create:
     post:
@@ -11425,7 +11425,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11470,7 +11470,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11502,7 +11502,7 @@ paths:
         Dismiss SonarLint advertisement. Deprecated since 9.6, replaced api/users/dismiss_notice 
       operationId: api-users-dismiss_sonarlint_ad
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/users/groups:
     get:
@@ -11546,7 +11546,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11619,7 +11619,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11697,7 +11697,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11749,7 +11749,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/users/update_login:
     post:
@@ -11772,7 +11772,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/webhooks/create:
     post:
@@ -11809,7 +11809,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11841,7 +11841,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/webhooks/deliveries:
     get:
@@ -11885,7 +11885,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11938,7 +11938,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -11982,7 +11982,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -12037,7 +12037,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: not provided
   /api/webservices/list:
     get:
@@ -12053,7 +12053,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:
@@ -12133,7 +12133,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        2XX:
           description: ''
           content:
             application/json:

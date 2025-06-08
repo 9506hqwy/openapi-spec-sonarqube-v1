@@ -55,7 +55,7 @@ do
 			fi
 
 			echo "      responses:"
-			echo "        '200':"
+			echo "        '2XX':"
 			if "${HAS_RESPONSE_EXAMPLE}"; then
 				echo "          \$ref: \"./${RESPONSE_FILE_NAME}\""
 			else
