@@ -1,5 +1,10 @@
 # OpenAPI Schema for SonarQube Server Web API v1
 
+## Versions
+
+* [v9.9](https://github.com/9506hqwy/openapi-spec-sonarqube-v1/blob/v9.9/openapi.yml)
+* [v25.6](https://github.com/9506hqwy/openapi-spec-sonarqube-v1/blob/main/openapi.yml)
+
 ## Generating
 
 Download web service definitions and response examples from SonarQube server.

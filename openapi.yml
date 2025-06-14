@@ -1,10 +1,228 @@
 openapi: 3.0.3
 info:
   title: SonarQube OpenAPI Specification
-  version: 9.9.7.0
+  version: 25.6.0.109173
 security:
   - BasicAuth: []
 paths:
+  /api/alm_integrations/import_azure_project:
+    post:
+      description: |
+        Create a SonarQube project with the information from the provided Azure DevOps project.<br/>Autoconfigure pull request decoration mechanism.<br/>Requires the 'Create Projects' permission 
+      operationId: api-alm_integrations-import_azure_project
+      parameters:
+        - name: almSetting
+          in: query
+          description: |
+            DevOps Platform configuration key. This parameter is optional if you have only one Azure integration. 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: projectName
+          in: query
+          description: |
+            Azure project name 
+          required: true
+          schema:
+            type: string
+        - name: repositoryName
+          in: query
+          description: |
+            Azure repository name 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/alm_integrations/import_bitbucketcloud_repo:
+    post:
+      description: |
+        Create a SonarQube project with the information from the provided Bitbucket Cloud repository.<br/>Autoconfigure pull request decoration mechanism.<br/>Requires the 'Create Projects' permission 
+      operationId: api-alm_integrations-import_bitbucketcloud_repo
+      parameters:
+        - name: almSetting
+          in: query
+          description: |
+            DevOps Platform configuration key. This parameter is optional if you have only one BitBucket Cloud integration. 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: repositorySlug
+          in: query
+          description: |
+            Bitbucket Cloud repository slug 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/alm_integrations/import_bitbucketserver_project:
+    post:
+      description: |
+        Create a SonarQube project with the information from the provided BitbucketServer project.<br/>Autoconfigure pull request decoration mechanism.<br/>Requires the 'Create Projects' permission 
+      operationId: api-alm_integrations-import_bitbucketserver_project
+      parameters:
+        - name: almSetting
+          in: query
+          description: |
+            DevOps Platform configuration key. This parameter is optional if you have only one BitBucket Server integration. 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: projectKey
+          in: query
+          description: |
+            BitbucketServer project key 
+          required: true
+          schema:
+            type: string
+        - name: repositorySlug
+          in: query
+          description: |
+            BitbucketServer repository slug 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/alm_integrations/import_github_project:
+    post:
+      description: |
+        Create a SonarQube project with the information from the provided GitHub repository.<br/>Autoconfigure pull request decoration mechanism. If Automatic Provisioning is enable for GitHub, it will also synchronize permissions from the repository.<br/>Requires the 'Create Projects' permission 
+      operationId: api-alm_integrations-import_github_project
+      parameters:
+        - name: almSetting
+          in: query
+          description: |
+            DevOps Platform configuration key. This parameter is optional if you have only one GitHub integration. 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: repositoryKey
+          in: query
+          description: |
+            GitHub repository key (organization/repoSlug 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/alm_integrations/import_gitlab_project:
     post:
       description: |
@@ -14,8 +232,8 @@ paths:
         - name: almSetting
           in: query
           description: |
-            DevOps Platform setting key 
-          required: true
+            DevOps Platform configuration key. This parameter is optional if you have only one GitLab integration. 
+          required: false
           schema:
             type: string
         - name: gitlabProjectId
@@ -23,6 +241,20 @@ paths:
           description: |
             GitLab project ID 
           required: true
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
           schema:
             type: string
       responses:
@@ -97,6 +329,20 @@ paths:
           description: |
             DevOps Platform setting key 
           required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          description: |
+            Number of items to return. 
+          required: false
+          schema:
+            type: string
+        - name: start
+          in: query
+          description: |
+            Start number for the page (inclusive). If not passed, the first page is assumed. 
+          required: false
           schema:
             type: string
       responses:
@@ -281,6 +527,13 @@ paths:
           required: true
           schema:
             type: string
+        - name: pageSize
+          in: query
+          description: |
+            Number of items to return. 
+          required: false
+          schema:
+            type: string
         - name: projectName
           in: query
           description: |
@@ -292,6 +545,13 @@ paths:
           in: query
           description: |
             Repository name filter 
+          required: false
+          schema:
+            type: string
+        - name: start
+          in: query
+          description: |
+            Start number for the page (inclusive). If not passed, the first page is assumed. 
           required: false
           schema:
             type: string
@@ -364,7 +624,7 @@ paths:
         - name: ps
           in: query
           description: |
-            Page size. Must be greater than 0 and less or equal than 500 
+            Page size. Must be greater than 0 and less or equal than 100 
           required: false
           schema:
             type: string
@@ -419,14 +679,14 @@ paths:
   /api/alm_integrations/set_pat:
     post:
       description: |
-        Set a Personal Access Token for the given DevOps Platform setting<br/>Only valid for Azure DevOps, Bitbucket Server, GitLab and Bitbucket Cloud Setting<br/>Requires the 'Create Projects' permission 
+        Set a Personal Access Token for the given DevOps Platform setting<br/>Requires the 'Create Projects' permission 
       operationId: api-alm_integrations-set_pat
       parameters:
         - name: almSetting
           in: query
           description: |
-            DevOps Platform setting key 
-          required: true
+            DevOps Platform configuration key. This parameter is optional if you have only one single DevOps Platform integration. 
+          required: false
           schema:
             type: string
         - name: pat
@@ -787,7 +1047,7 @@ paths:
   /api/alm_settings/get_binding:
     get:
       description: |
-        Get DevOps Platform binding of a given project.<br/>Requires the 'Administer' permission on the project 
+        Get DevOps Platform binding of a given project.<br/>Requires the 'Browse' permission on the project 
       operationId: api-alm_settings-get_binding
       parameters:
         - name: project
@@ -1429,20 +1689,13 @@ paths:
   /api/ce/activity:
     get:
       description: |
-        Search for tasks.<br> Either componentId or component can be provided, but not both.<br> Requires the system administration permission, or project administration permission if componentId or component is set. 
+        Search for tasks.<br> Requires the system administration permission, or project administration permission if component is set. 
       operationId: api-ce-activity
       parameters:
         - name: component
           in: query
           description: |
             Key of the component (project) to filter on 
-          required: false
-          schema:
-            type: string
-        - name: componentId
-          in: query
-          description: |
-            Id of the component (project) to filter on 
           required: false
           schema:
             type: string
@@ -1484,7 +1737,7 @@ paths:
         - name: q
           in: query
           description: |
-            Limit search to: <ul><li>component names that contain the supplied string</li><li>component keys that are exactly the same as the supplied string</li><li>task ids that are exactly the same as the supplied string</li></ul>Must not be set together with componentId 
+            Limit search to: <ul><li>component names that contain the supplied string</li><li>component keys that are exactly the same as the supplied string</li><li>task ids that are exactly the same as the supplied string</li></ul> 
           required: false
           schema:
             type: string
@@ -1515,8 +1768,6 @@ paths:
                     items:
                       type: object
                       properties:
-                        organization:
-                          type: string
                         id:
                           type: string
                         type:
@@ -1543,12 +1794,18 @@ paths:
                           type: string
                         executionTimeMs:
                           type: integer
-                        logs:
-                          type: boolean
-                        hasErrorStacktrace:
-                          type: boolean
                         hasScannerContext:
                           type: boolean
+                        warningCount:
+                          type: integer
+                        warnings:
+                          type: array
+                          items:
+                            type: string
+                        infoMessages:
+                          type: array
+                          items:
+                            type: string
                   paging:
                     type: object
                     properties:
@@ -1582,13 +1839,6 @@ paths:
           in: query
           description: |
             Key of the component (project) to filter on 
-          required: false
-          schema:
-            type: string
-        - name: componentId
-          in: query
-          description: |
-            Id of the component (project) to filter on 
           required: false
           schema:
             type: string
@@ -1666,8 +1916,6 @@ paths:
                           type: string
                         submittedAt:
                           type: string
-                        logs:
-                          type: boolean
                   current:
                     type: object
                     properties:
@@ -1697,8 +1945,6 @@ paths:
                         type: string
                       executionTimeMs:
                         type: integer
-                      logs:
-                        type: boolean
                       errorMessage:
                         type: string
                       errorType:
@@ -1724,7 +1970,7 @@ paths:
   /api/ce/task:
     get:
       description: |
-        Give Compute Engine task details such as type, status, duration and associated component.<br />Requires 'Administer System' or 'Execute Analysis' permission.<br/>Since 6.1, field "logs" is deprecated and its value is always false. 
+        Give Compute Engine task details such as type, status, duration and associated component.<br/>Requires one of the following permissions: <ul><li>'Administer' at global or project level</li><li>'Execute Analysis' at global or project level</li></ul>Since 6.1, field "logs" is deprecated and its value is always false. 
       operationId: api-ce-task
       parameters:
         - name: additionalFields
@@ -1752,8 +1998,6 @@ paths:
                   task:
                     type: object
                     properties:
-                      organization:
-                        type: string
                       id:
                         type: string
                       type:
@@ -1772,24 +2016,22 @@ paths:
                         type: string
                       submittedAt:
                         type: string
+                      submitterLogin:
+                        type: string
                       startedAt:
                         type: string
                       executedAt:
                         type: string
                       executionTimeMs:
                         type: integer
-                      errorMessage:
-                        type: string
-                      logs:
-                        type: boolean
-                      hasErrorStacktrace:
-                        type: boolean
-                      errorStacktrace:
-                        type: string
-                      scannerContext:
-                        type: string
                       hasScannerContext:
                         type: boolean
+                      warningCount:
+                        type: integer
+                      warnings:
+                        type: array
+                        items:
+                          type: string
         default:
           description: Error messages
           content:
@@ -1827,7 +2069,7 @@ paths:
         - name: q
           in: query
           description: |
-            Limit search to: <ul><li>component names that contain the supplied string</li><li>component keys that are exactly the same as the supplied string</li></ul> 
+            Limit search to: <ul><li>component names that contain the supplied string</li><li>component keys that are exactly the same as the supplied string</li></ul><br>The value length of the param must be between 2 and 15 (inclusive) characters. In case longer value is provided it will be truncated. 
           required: false
           schema:
             type: string
@@ -2025,7 +2267,7 @@ paths:
         - name: qualifiers
           in: query
           description: |
-            Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>BRC - no description available</li><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul> 
+            Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul> 
           required: false
           schema:
             type: string
@@ -2188,7 +2430,7 @@ paths:
   /api/favorites/add:
     post:
       description: |
-        Add a component (project, file etc.) as favorite for the authenticated user.<br>Only 100 components by qualifier can be added as favorite.<br>Requires authentication and the following permission: 'Browse' on the project of the specified component. 
+        Add a component (project, portfolio, etc.) as favorite for the authenticated user.<br>Only 100 components by qualifier can be added as favorite.<br>Requires authentication and the following permission: 'Browse' on the component. 
       operationId: api-favorites-add
       parameters:
         - name: component
@@ -2307,16 +2549,74 @@ paths:
                       properties:
                         msg:
                           type: string
+  /api/hotspots/change_status:
+    post:
+      description: |
+        Change the status of a Security Hotpot.<br/>Requires the 'Administer Security Hotspot' permission. 
+      operationId: api-hotspots-change_status
+      parameters:
+        - name: comment
+          in: query
+          description: |
+            Comment text. 
+          required: false
+          schema:
+            type: string
+        - name: hotspot
+          in: query
+          description: |
+            Key of the Security Hotspot 
+          required: true
+          schema:
+            type: string
+        - name: resolution
+          in: query
+          description: |
+            Resolution of the Security Hotspot when new status is REVIEWED, otherwise must not be set. 
+          required: false
+          schema:
+            type: string
+        - name: status
+          in: query
+          description: |
+            New status of the Security Hotspot. 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/hotspots/search:
     get:
       description: |
-        Search for Security Hotpots. <br>Requires the 'Browse' permission on the specified project(s). <br>For applications, it also requires 'Browse' permission on its child projects. <br>When issue indexation is in progress returns 503 service unavailable HTTP code. 
+        Search for Security Hotpots. <br>Requires the 'Browse' permission on the specified project(s). <br>For applications, it also requires 'Browse' permission on its child projects. <br>When issue indexing is in progress returns 503 service unavailable HTTP code. 
       operationId: api-hotspots-search
       parameters:
         - name: branch
           in: query
           description: |
             Branch key. Not available in the community edition. 
+          required: false
+          schema:
+            type: string
+        - name: casa
+          in: query
+          description: |
+            Comma-separated list of CASA categories. 
           required: false
           schema:
             type: string
@@ -2337,7 +2637,7 @@ paths:
         - name: hotspots
           in: query
           description: |
-            Comma-separated list of Security Hotspot keys. This parameter is required unless projectKey is provided. 
+            Comma-separated list of Security Hotspot keys. This parameter is required unless project is provided. 
           required: false
           schema:
             type: string
@@ -2404,7 +2704,7 @@ paths:
           required: false
           schema:
             type: string
-        - name: projectKey
+        - name: project
           in: query
           description: |
             Key of the project or application. This parameter is required unless hotspots is provided. 
@@ -2428,7 +2728,7 @@ paths:
         - name: resolution
           in: query
           description: |
-            If 'projectKey' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned. 
+            If 'project' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned. 
           required: false
           schema:
             type: string
@@ -2449,7 +2749,14 @@ paths:
         - name: status
           in: query
           description: |
-            If 'projectKey' is provided, only Security Hotspots with the specified status are returned. 
+            If 'project' is provided, only Security Hotspots with the specified status are returned. 
+          required: false
+          schema:
+            type: string
+        - name: stig-ASD_V5R3
+          in: query
+          description: |
+            Comma-separated list of STIG V5R3 lowercase categories. 
           required: false
           schema:
             type: string
@@ -2702,6 +3009,10 @@ paths:
                           type: boolean
                   canChangeStatus:
                     type: boolean
+                  codeVariants:
+                    type: array
+                    items:
+                      type: string
         default:
           description: Error messages
           content:
@@ -2751,8 +3062,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -2799,7 +3121,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -2844,8 +3166,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                       scope:
@@ -2862,8 +3182,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -2952,8 +3270,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -3000,7 +3329,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -3045,8 +3374,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                   components:
@@ -3055,8 +3382,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -3113,7 +3438,7 @@ paths:
   /api/issues/authors:
     get:
       description: |
-        Search SCM accounts which match a given query.<br/>Requires authentication.<br/>When issue indexation is in progress returns 503 service unavailable HTTP code. 
+        Search SCM accounts which match a given query.<br/>Requires authentication.<br/>When issue indexing is in progress returns 503 service unavailable HTTP code. 
       operationId: api-issues-authors
       parameters:
         - name: project
@@ -3355,8 +3680,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -3403,7 +3739,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -3448,8 +3784,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                   components:
@@ -3458,8 +3792,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -3516,7 +3848,7 @@ paths:
   /api/issues/do_transition:
     post:
       description: |
-        Do workflow transition on an issue. Requires authentication and Browse permission on project.<br/>The transitions 'wontfix' and 'falsepositive' require the permission 'Administer Issues'.<br/>The transitions involving security hotspots require the permission 'Administer Security Hotspot'. 
+        Do workflow transition on an issue. Requires authentication and Browse permission on project.<br/> The transitions 'accept', 'wontfix' and 'falsepositive' require the permission 'Administer Issues'.<br/> The transitions involving security hotspots require the permission 'Administer Security Hotspot'. 
       operationId: api-issues-do_transition
       parameters:
         - name: issue
@@ -3548,8 +3880,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -3596,7 +3939,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -3641,8 +3984,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                   components:
@@ -3651,8 +3992,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -3741,8 +4080,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -3789,7 +4139,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -3834,8 +4184,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                   components:
@@ -3844,8 +4192,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -3932,7 +4278,7 @@ paths:
   /api/issues/search:
     get:
       description: |
-        Search for issues.<br>Requires the 'Browse' permission on the specified project(s). <br>For applications, it also requires 'Browse' permission on its child projects.<br/>When issue indexation is in progress returns 503 service unavailable HTTP code. 
+        Search for issues.<br>Requires the 'Browse' permission on the specified project(s). <br>For applications, it also requires 'Browse' permission on its child projects.<br/>When issue indexing is in progress returns 503 service unavailable HTTP code. 
       operationId: api-issues-search
       parameters:
         - name: additionalFields
@@ -3977,7 +4323,28 @@ paths:
           required: false
           schema:
             type: string
-        - name: componentKeys
+        - name: casa
+          in: query
+          description: |
+            Comma-separated list of CASA categories. 
+          required: false
+          schema:
+            type: string
+        - name: cleanCodeAttributeCategories
+          in: query
+          description: |
+            Comma-separated list of Clean Code Attribute Categories 
+          required: false
+          schema:
+            type: string
+        - name: codeVariants
+          in: query
+          description: |
+            Comma-separated list of code variants. 
+          required: false
+          schema:
+            type: string
+        - name: components
           in: query
           description: |
             Comma-separated list of component keys. Retrieve issues associated to a specific list of components (and all its descendants). A component can be a portfolio, project, module, directory or file. 
@@ -4026,10 +4393,38 @@ paths:
           required: false
           schema:
             type: string
+        - name: fixedInPullRequest
+          in: query
+          description: |
+            Pull request id to filter issues that would be fixed in the specified project or branch by the pull request. Should not be used together with + 'pullRequest'. At least the 'components' must be be specified when this param is used. Not available in the community edition. 
+          required: false
+          schema:
+            type: string
+        - name: impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Software Quality Severities 
+          required: false
+          schema:
+            type: string
+        - name: impactSoftwareQualities
+          in: query
+          description: |
+            Comma-separated list of Software Qualities 
+          required: false
+          schema:
+            type: string
         - name: inNewCodePeriod
           in: query
           description: |
-            To retrieve issues created in the new code period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided. 
+            To retrieve issues created in the new code period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided.<br>This parameter is ignored if the requested component is Application or Portfolio. 
+          required: false
+          schema:
+            type: string
+        - name: issueStatuses
+          in: query
+          description: |2
+             
           required: false
           schema:
             type: string
@@ -4068,6 +4463,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: owaspMobileTop10-2024
+          in: query
+          description: |
+            Comma-separated list of OWASP Mobile Top 10 2024 lowercase categories. 
+          required: false
+          schema:
+            type: string
         - name: owaspTop10
           in: query
           description: |
@@ -4100,6 +4502,13 @@ paths:
           in: query
           description: |
             Comma-separated list of PCI DSS v4.0 categories. 
+          required: false
+          schema:
+            type: string
+        - name: prioritizedRule
+          in: query
+          description: |
+            To match issues with prioritized rule or not 
           required: false
           schema:
             type: string
@@ -4166,13 +4575,6 @@ paths:
           required: false
           schema:
             type: string
-        - name: sinceLeakPeriod
-          in: query
-          description: |
-            To retrieve issues created since the leak period.<br>If this parameter is set to a truthy value, createdAfter must not be set and one component uuid or key must be provided. 
-          required: false
-          schema:
-            type: string
         - name: sonarsourceSecurity
           in: query
           description: |
@@ -4184,6 +4586,13 @@ paths:
           in: query
           description: |
             Comma-separated list of statuses 
+          required: false
+          schema:
+            type: string
+        - name: stig-ASD_V5R3
+          in: query
+          description: |
+            Comma-separated list of STIG V5R3 categories. 
           required: false
           schema:
             type: string
@@ -4238,12 +4647,23 @@ paths:
                           type: string
                         rule:
                           type: string
-                        status:
+                        cleanCodeAttribute:
                           type: string
-                        resolution:
+                        cleanCodeAttributeCategory:
                           type: string
-                        severity:
+                        issueStatus:
                           type: string
+                        prioritizedRule:
+                          type: boolean
+                        impacts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              softwareQuality:
+                                type: string
+                              severity:
+                                type: string
                         message:
                           type: string
                         messageFormattings:
@@ -4273,8 +4693,6 @@ paths:
                           type: array
                           items:
                             type: string
-                        type:
-                          type: string
                         comments:
                           type: array
                           items:
@@ -4292,11 +4710,6 @@ paths:
                                 type: boolean
                               createdAt:
                                 type: string
-                        attr:
-                          type: object
-                          properties:
-                            jira-issue-key:
-                              type: string
                         transitions:
                           type: array
                           items:
@@ -4354,6 +4767,10 @@ paths:
                           type: boolean
                         ruleDescriptionContextKey:
                           type: string
+                        codeVariants:
+                          type: array
+                          items:
+                            type: string
                   components:
                     type: array
                     items:
@@ -4399,6 +4816,22 @@ paths:
                           type: boolean
                         avatar:
                           type: string
+                  facets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        property:
+                          type: string
+                        values:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              val:
+                                type: string
+                              count:
+                                type: integer
         default:
           description: Error messages
           content:
@@ -4419,6 +4852,13 @@ paths:
         Change severity.<br/>Requires the following permissions:<ul> <li>'Authentication'</li> <li>'Browse' rights on project of the specified issue</li> <li>'Administer Issues' rights on project of the specified issue</li></ul> 
       operationId: api-issues-set_severity
       parameters:
+        - name: impact
+          in: query
+          description: |
+            Override of impact severity for the rule. Cannot be used as the same time as 'severity' 
+          required: false
+          schema:
+            type: string
         - name: issue
           in: query
           description: |
@@ -4430,7 +4870,7 @@ paths:
           in: query
           description: |
             New severity 
-          required: true
+          required: false
           schema:
             type: string
       responses:
@@ -4450,6 +4890,19 @@ paths:
                         type: string
                       severity:
                         type: string
+                      cleanCodeAttribute:
+                        type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -4497,6 +4950,8 @@ paths:
                                     items:
                                       type: string
                       status:
+                        type: string
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -4551,8 +5006,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -4641,8 +5094,19 @@ paths:
                         type: string
                       rule:
                         type: string
-                      severity:
+                      cleanCodeAttribute:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -4689,7 +5153,7 @@ paths:
                                     type: array
                                     items:
                                       type: string
-                      status:
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -4734,8 +5198,6 @@ paths:
                         type: string
                       updateDate:
                         type: string
-                      type:
-                        type: string
                       ruleDescriptionContextKey:
                         type: string
                   components:
@@ -4744,8 +5206,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -4840,6 +5300,19 @@ paths:
                         type: string
                       severity:
                         type: string
+                      cleanCodeAttribute:
+                        type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       component:
                         type: string
                       project:
@@ -4887,6 +5360,8 @@ paths:
                                     items:
                                       type: string
                       status:
+                        type: string
+                      issueStatus:
                         type: string
                       message:
                         type: string
@@ -4941,8 +5416,6 @@ paths:
                       type: object
                       properties:
                         key:
-                          type: string
-                        uuid:
                           type: string
                         enabled:
                           type: boolean
@@ -5117,7 +5590,7 @@ paths:
   /api/measures/component:
     get:
       description: |
-        Return component with specified measures.<br>Requires the following permission: 'Browse' on the project of specified component. 
+        Return component with specified measures.<br>Requires one of the following permissions:<ul><li>'Browse' on the project of the specified component</li><li>'Execute Analysis' on the project of the specified component</li></ul> 
       operationId: api-measures-component
       parameters:
         - name: additionalFields
@@ -5266,7 +5739,7 @@ paths:
         - name: metricKeys
           in: query
           description: |
-            Comma-separated list of metric keys. Types DISTRIB, DATA are not allowed. 
+            Comma-separated list of metric keys. Types DISTRIB are not allowed. For type DATA only new_maintainability_issues, new_security_issues, new_reliability_issues, security_issues, maintainability_issues, reliability_issues metrics are supported 
           required: true
           schema:
             type: string
@@ -5322,7 +5795,7 @@ paths:
         - name: qualifiers
           in: query
           description: |
-            Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>BRC - no description available</li><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul> 
+            Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul> 
           required: false
           schema:
             type: string
@@ -5668,7 +6141,7 @@ paths:
   /api/monitoring/metrics:
     get:
       description: |
-        Return monitoring metrics in Prometheus format. Support content type 'text/plain' (default) and 'application/openmetrics-text'. this endpoint can be access using a Bearer token, that needs to be defined in sonar.properties with the 'sonar.web.systemPasscode' key. 
+        Return monitoring metrics in Prometheus format. Support content type 'text/plain' (default) and 'application/openmetrics-text'. This endpoint can be accessed using a Bearer token, which needs to be defined in sonar.properties with the 'sonar.web.systemPasscode' key. 
       operationId: api-monitoring-metrics
       responses:
         2XX:
@@ -5694,7 +6167,7 @@ paths:
   /api/new_code_periods/list:
     get:
       description: |
-        List the New Code Periods for all branches in a project.<br>Requires the permission to browse the project 
+        Lists the <a href="https://docs.sonarsource.com/sonarqube-community-build/project-administration/setting-up-clean-as-you-code/#setting-a-new-code-definition" target="_blank" rel="noopener noreferrer">new code definition</a> for all branches in a project.<br>Requires the permission to browse the project 
       operationId: api-new_code_periods-list
       parameters:
         - name: project
@@ -5744,7 +6217,7 @@ paths:
   /api/new_code_periods/set:
     post:
       description: |
-        Updates the setting for the New Code Period on different levels:<br><ul><li>Project key must be provided to update the value for a project</li><li>Both project and branch keys must be provided to update the value for a branch</li></ul>Requires one of the following permissions: <ul><li>'Administer System' to change the global setting</li><li>'Administer' rights on the specified project to change the project setting</li></ul> 
+        Updates the <a href="https://docs.sonarsource.com/sonarqube-community-build/project-administration/setting-up-clean-as-you-code/#setting-a-new-code-definition" target="_blank" rel="noopener noreferrer">new code definition</a> on different levels:<br><ul><li>Not providing a project key and a branch key will update the default value at global level. Existing projects or branches having a specific new code definition will not be impacted</li><li>Project key must be provided to update the value for a project</li><li>Both project and branch keys must be provided to update the value for a branch</li></ul>Requires one of the following permissions: <ul><li>'Administer System' to change the global setting</li><li>'Administer' rights on the specified project to change the project setting</li></ul> 
       operationId: api-new_code_periods-set
       parameters:
         - name: branch
@@ -5764,14 +6237,14 @@ paths:
         - name: type
           in: query
           description: |
-            Type<br/>New code periods of the following types are allowed:<ul><li>SPECIFIC_ANALYSIS - can be set at branch level only</li><li>PREVIOUS_VERSION - can be set at any level (global, project, branch)</li><li>NUMBER_OF_DAYS - can be set at any level (global, project, branch)</li><li>REFERENCE_BRANCH - can only be set for projects and branches</li></ul> 
+            Type<br/>New code definitions of the following types are allowed:<ul><li>SPECIFIC_ANALYSIS - can be set at branch level only</li><li>PREVIOUS_VERSION - can be set at any level (global, project, branch)</li><li>NUMBER_OF_DAYS - can be set at any level (global, project, branch)</li><li>REFERENCE_BRANCH - can only be set for projects and branches</li></ul> 
           required: true
           schema:
             type: string
         - name: value
           in: query
           description: |
-            Value<br/>For each type, a different value is expected:<ul><li>the uuid of an analysis, when type is SPECIFIC_ANALYSIS</li><li>no value, when type is PREVIOUS_VERSION</li><li>a number, when type is NUMBER_OF_DAYS</li><li>a string, when type is REFERENCE_BRANCH</li></ul> 
+            Value<br/>For each type, a different value is expected:<ul><li>the uuid of an analysis, when type is SPECIFIC_ANALYSIS</li><li>no value, when type is PREVIOUS_VERSION</li><li>a number between 1 and 90, when type is NUMBER_OF_DAYS</li><li>a string, when type is REFERENCE_BRANCH</li></ul> 
           required: false
           schema:
             type: string
@@ -5795,7 +6268,7 @@ paths:
   /api/new_code_periods/show:
     get:
       description: |
-        Shows a setting for the New Code Period.<br> If the component requested doesn't exist or if no new code period is set for it, a value is inherited from the project or from the global setting.Requires one of the following permissions if a component is specified: <ul><li>'Administer' rights on the specified component</li><li>'Execute analysis' rights on the specified component</li></ul> 
+        Shows the <a href="https://docs.sonarsource.com/sonarqube-community-build/project-administration/setting-up-clean-as-you-code/#setting-a-new-code-definition" target="_blank" rel="noopener noreferrer">new code definition</a>.<br> If the component requested doesn't exist or if no new code definition is set for it, a value is inherited from the project or from the global setting.Requires one of the following permissions if a component is specified: <ul><li>'Administer' rights on the specified component</li><li>'Execute analysis' rights on the specified component</li></ul> 
       operationId: api-new_code_periods-show
       parameters:
         - name: branch
@@ -5845,7 +6318,7 @@ paths:
   /api/new_code_periods/unset:
     post:
       description: |
-        Unset the New Code Period setting for a branch, project or global.<br>Requires one of the following permissions: <ul><li>'Administer System' to change the global setting</li><li>'Administer' rights for a specified component</li></ul> 
+        Unsets the <a href="https://docs.sonarsource.com/sonarqube-community-build/project-administration/setting-up-clean-as-you-code/#setting-a-new-code-definition" target="_blank" rel="noopener noreferrer">new code definition</a> for a branch, project or global. It requires the inherited New Code Definition to be compatible with the Clean as You Code methodology, and one of the following permissions: <ul><li>'Administer System' to change the global setting</li><li>'Administer' rights for a specified component</li></ul> 
       operationId: api-new_code_periods-unset
       parameters:
         - name: branch
@@ -5909,7 +6382,7 @@ paths:
         - name: type
           in: query
           description: |
-            Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul> 
+            Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, QualityGateConditionsMismatch, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul> 
           required: true
           schema:
             type: string
@@ -6016,7 +6489,7 @@ paths:
         - name: type
           in: query
           description: |
-            Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul> 
+            Notification type. Possible values are for:<ul> <li>Global notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, QualityGateConditionsMismatch, SQ-MyNewIssues</li> <li>Per project notifications: CeReportTaskFailure, ChangesOnMyIssue, NewAlerts, NewFalsePositiveIssue, NewIssues, SQ-MyNewIssues</li></ul> 
           required: true
           schema:
             type: string
@@ -6040,27 +6513,20 @@ paths:
   /api/permissions/add_group:
     post:
       description: |
-        Add a permission to a group.<br /> This service defaults to global permissions, but can be limited to project permissions by providing project id or project key.<br /> The group name or group id must be provided. <br />Requires one of the following permissions:<ul><li>'Administer System'</li><li>'Administer' rights on the specified project</li></ul> 
+        Add a permission to a group.<br /> This service defaults to global permissions, but can be limited to project permissions by providing project id or project key.<br /> The group name must be provided. <br />Requires one of the following permissions:<ul><li>'Administer System'</li><li>'Administer' rights on the specified project</li></ul> 
       operationId: api-permissions-add_group
       parameters:
-        - name: groupId
-          in: query
-          description: |
-            Group id, use 'name' param instead 
-          required: false
-          schema:
-            type: string
         - name: groupName
           in: query
           description: |
             Group name or 'anyone' (case insensitive) 
-          required: false
+          required: true
           schema:
             type: string
         - name: permission
           in: query
           description: |
-            The permission you would like to grant to the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
+            The permission you would like to grant to the group.<ul><li>Possible values for global permissions: admin, gateadmin, profileadmin, provisioning, scan, applicationcreator, portfoliocreator</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
           required: true
           schema:
             type: string
@@ -6098,21 +6564,14 @@ paths:
   /api/permissions/add_group_to_template:
     post:
       description: |
-        Add a group to a permission template.<br /> The group id or group name must be provided. <br />Requires the following permission: 'Administer System'. 
+        Add a group to a permission template.<br /> The group name must be provided. <br />Requires the following permission: 'Administer System'. 
       operationId: api-permissions-add_group_to_template
       parameters:
-        - name: groupId
-          in: query
-          description: |
-            Group id, use 'name' param instead 
-          required: false
-          schema:
-            type: string
         - name: groupName
           in: query
           description: |
             Group name or 'anyone' (case insensitive) 
-          required: false
+          required: true
           schema:
             type: string
         - name: permission
@@ -6213,7 +6672,7 @@ paths:
         - name: permission
           in: query
           description: |
-            The permission you would like to grant to the user<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
+            The permission you would like to grant to the user<ul><li>Possible values for global permissions: admin, gateadmin, profileadmin, provisioning, scan, applicationcreator, portfoliocreator</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
           required: true
           schema:
             type: string
@@ -6353,7 +6812,7 @@ paths:
   /api/permissions/bulk_apply_template:
     post:
       description: |
-        Apply a permission template to several projects.<br />The template id or name must be provided.<br />Requires the following permission: 'Administer System'. 
+        Apply a permission template to several components. Managed projects will be ignored.<br />The template id or name must be provided.<br />Requires the following permission: 'Administer System'. 
       operationId: api-permissions-bulk_apply_template
       parameters:
         - name: analyzedBefore
@@ -6520,27 +6979,20 @@ paths:
   /api/permissions/remove_group:
     post:
       description: |
-        Remove a permission from a group.<br /> This service defaults to global permissions, but can be limited to project permissions by providing project id or project key.<br /> The group id or group name must be provided, not both.<br />Requires one of the following permissions:<ul><li>'Administer System'</li><li>'Administer' rights on the specified project</li></ul> 
+        Remove a permission from a group.<br /> This service defaults to global permissions, but can be limited to project permissions by providing project id or project key.<br /> The group name must be provided.<br />Requires one of the following permissions:<ul><li>'Administer System'</li><li>'Administer' rights on the specified project</li></ul> 
       operationId: api-permissions-remove_group
       parameters:
-        - name: groupId
-          in: query
-          description: |
-            Group id, use 'name' param instead 
-          required: false
-          schema:
-            type: string
         - name: groupName
           in: query
           description: |
             Group name or 'anyone' (case insensitive) 
-          required: false
+          required: true
           schema:
             type: string
         - name: permission
           in: query
           description: |
-            The permission you would like to revoke from the group.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
+            The permission you would like to revoke from the group.<ul><li>Possible values for global permissions: admin, gateadmin, profileadmin, provisioning, scan, applicationcreator, portfoliocreator</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
           required: true
           schema:
             type: string
@@ -6578,21 +7030,14 @@ paths:
   /api/permissions/remove_group_from_template:
     post:
       description: |
-        Remove a group from a permission template.<br /> The group id or group name must be provided. <br />Requires the following permission: 'Administer System'. 
+        Remove a group from a permission template.<br /> The group name must be provided. <br />Requires the following permission: 'Administer System'. 
       operationId: api-permissions-remove_group_from_template
       parameters:
-        - name: groupId
-          in: query
-          description: |
-            Group id, use 'name' param instead 
-          required: false
-          schema:
-            type: string
         - name: groupName
           in: query
           description: |
             Group name or 'anyone' (case insensitive) 
-          required: false
+          required: true
           schema:
             type: string
         - name: permission
@@ -6693,7 +7138,7 @@ paths:
         - name: permission
           in: query
           description: |
-            The permission you would like to revoke from the user.<ul><li>Possible values for global permissions: admin, profileadmin, gateadmin, scan, provisioning</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
+            The permission you would like to revoke from the user.<ul><li>Possible values for global permissions: admin, gateadmin, profileadmin, provisioning, scan, applicationcreator, portfoliocreator</li><li>Possible values for project permissions admin, codeviewer, issueadmin, securityhotspotadmin, scan, user</li></ul> 
           required: true
           schema:
             type: string
@@ -7151,6 +7596,10 @@ paths:
                           type: string
                         updatedAt:
                           type: integer
+                        requiredForLanguages:
+                          type: array
+                          items:
+                            type: string
         default:
           description: Error messages
           content:
@@ -7629,87 +8078,15 @@ paths:
                                 type: string
                               name:
                                 type: string
-        default:
-          description: Error messages
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        msg:
-                          type: string
-  /api/project_analyses/set_baseline:
-    post:
-      description: |
-        Set an analysis as the baseline of the New Code Period on a project or a branch.<br/>This manually set baseline.<br/>Requires one of the following permissions:<ul> <li>'Administer System'</li> <li>'Administer' rights on the specified project</li></ul> 
-      operationId: api-project_analyses-set_baseline
-      parameters:
-        - name: analysis
-          in: query
-          description: |
-            Analysis key 
-          required: true
-          schema:
-            type: string
-        - name: branch
-          in: query
-          description: |
-            Branch key 
-          required: false
-          schema:
-            type: string
-        - name: project
-          in: query
-          description: |
-            Project key 
-          required: true
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: not provided
-        default:
-          description: Error messages
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        msg:
-                          type: string
-  /api/project_analyses/unset_baseline:
-    post:
-      description: |
-        Unset any manually-set New Code Period baseline on a project or a branch.<br/>Unsetting a manual baseline restores the use of the default new code period setting.<br/>Requires one of the following permissions:<ul> <li>'Administer System'</li> <li>'Administer' rights on the specified project</li></ul> 
-      operationId: api-project_analyses-unset_baseline
-      parameters:
-        - name: branch
-          in: query
-          description: |
-            Branch key 
-          required: false
-          schema:
-            type: string
-        - name: project
-          in: query
-          description: |
-            Project key 
-          required: true
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: not provided
+                              qualityProfile:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  name:
+                                    type: string
+                                  languageKey:
+                                    type: string
         default:
           description: Error messages
           content:
@@ -8025,6 +8402,8 @@ paths:
                           type: string
                         excludedFromPurge:
                           type: boolean
+                        branchId:
+                          type: string
         default:
           description: Error messages
           content:
@@ -8100,6 +8479,43 @@ paths:
           in: query
           description: |
             Sets whether the branch should be protected from automatic deletion when it hasn't been analyzed for a set period of time. 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/project_branches/set_main:
+    post:
+      description: |
+        Allow to set a new main branch.<br/>. Caution, only applicable on projects.<br>Requires 'Administer' rights on the specified project or application. 
+      operationId: api-project_branches-set_main
+      parameters:
+        - name: branch
+          in: query
+          description: |
+            Branch key 
+          required: true
+          schema:
+            type: string
+        - name: project
+          in: query
+          description: |
+            Project key 
           required: true
           schema:
             type: string
@@ -8464,7 +8880,7 @@ paths:
   /api/projects/create:
     post:
       description: |
-        Create a project.<br/>Requires 'Create Projects' permission 
+        Create a project.<br/>If your project is hosted on a DevOps Platform, please use the import endpoint under api/alm_integrations, so it creates and properly configures the project.Requires 'Create Projects' permission.<br/> 
       operationId: api-projects-create
       parameters:
         - name: mainBranch
@@ -8479,6 +8895,20 @@ paths:
           description: |
             Name of the project. If name is longer than 500, it is abbreviated. 
           required: true
+          schema:
+            type: string
+        - name: newCodeDefinitionType
+          in: query
+          description: |
+            Project New Code Definition Type<br/>New code definitions of the following types are allowed:<ul><li>PREVIOUS_VERSION</li><li>NUMBER_OF_DAYS</li><li>REFERENCE_BRANCH - will default to the main branch.</li></ul> 
+          required: false
+          schema:
+            type: string
+        - name: newCodeDefinitionValue
+          in: query
+          description: |
+            Project New Code Definition Value<br/>For each new code definition type, a different value is expected:<ul><li>no value, when the new code definition type is PREVIOUS_VERSION and REFERENCE_BRANCH</li><li>a number between 1 and 90, when the new code definition type is NUMBER_OF_DAYS</li></ul> 
+          required: false
           schema:
             type: string
         - name: project
@@ -8559,7 +8989,7 @@ paths:
   /api/projects/search:
     get:
       description: |
-        Search for projects or views to administrate them.<br>Requires 'Administer System' permission 
+        Search for projects or views to administrate them. <ul> <li>The response field 'lastAnalysisDate' takes into account the analysis of all branches and pull requests, not only the main branch.</li> <li>The response field 'revision' takes into account the analysis of the main branch only.</li> </ul> Requires 'Administer System' permission 
       operationId: api-projects-search
       parameters:
         - name: analyzedBefore
@@ -8645,6 +9075,8 @@ paths:
                           type: string
                         revision:
                           type: string
+                        managed:
+                          type: boolean
         default:
           description: Error messages
           content:
@@ -8662,7 +9094,7 @@ paths:
   /api/projects/update_key:
     post:
       description: |
-        Update a project all its sub-components keys.<br>Requires one of the following permissions: <ul><li>'Administer System'</li><li>'Administer' rights on the specified project</li></ul> 
+        Update a project all its sub-components keys.<br>Requires 'Administer' permission on the project. 
       operationId: api-projects-update_key
       parameters:
         - name: from
@@ -8699,13 +9131,13 @@ paths:
   /api/projects/update_visibility:
     post:
       description: |
-        Updates visibility of a project or view.<br>Requires 'Project administer' permission on the specified project or view 
+        Updates visibility of a project, application or a portfolio.<br>Requires 'Project administer' permission on the specified entity 
       operationId: api-projects-update_visibility
       parameters:
         - name: project
           in: query
           description: |
-            Project key 
+            Project, application or portfolio key 
           required: true
           schema:
             type: string
@@ -8733,19 +9165,86 @@ paths:
                       properties:
                         msg:
                           type: string
+  /api/qualitygates/add_group:
+    post:
+      description: |
+        Allow a group of users to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-add_group
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: groupName
+          in: query
+          description: |
+            Group name or 'anyone' (case insensitive) 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/qualitygates/add_user:
+    post:
+      description: |
+        Allow a user to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-add_user
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: login
+          in: query
+          description: |
+            User login 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/copy:
     post:
       description: |
-        Copy a Quality Gate.<br>Either 'sourceName' or 'id' must be provided. Requires the 'Administer Quality Gates' permission. 
+        Copy a Quality Gate.<br>'sourceName' must be provided. Requires the 'Administer Quality Gates' permission. 
       operationId: api-qualitygates-copy
       parameters:
-        - name: id
-          in: query
-          description: |
-            The ID of the source quality gate. This parameter is deprecated. Use 'sourceName' instead. 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
@@ -8757,7 +9256,7 @@ paths:
           in: query
           description: |
             The name of the quality gate to copy 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -8819,7 +9318,7 @@ paths:
   /api/qualitygates/create_condition:
     post:
       description: |
-        Add a new condition to a quality gate.<br>Either 'gateId' or 'gateName' must be provided. Requires the 'Administer Quality Gates' permission. 
+        Add a new condition to a quality gate.<br>Parameter 'gateName' must be provided. Requires the 'Administer Quality Gates' permission. 
       operationId: api-qualitygates-create_condition
       parameters:
         - name: error
@@ -8829,24 +9328,17 @@ paths:
           required: true
           schema:
             type: string
-        - name: gateId
-          in: query
-          description: |
-            ID of the quality gate. This parameter is deprecated. Use 'gateName' instead. 
-          required: false
-          schema:
-            type: string
         - name: gateName
           in: query
           description: |
             Name of the quality gate 
-          required: false
+          required: true
           schema:
             type: string
         - name: metric
           in: query
           description: |
-            Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>alert_status</li><li>new_security_hotspots</li></ul> 
+            Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>new_security_hotspots</li><li>alert_status</li></ul> 
           required: true
           schema:
             type: string
@@ -8952,21 +9444,14 @@ paths:
   /api/qualitygates/destroy:
     post:
       description: |
-        Delete a Quality Gate.<br>Either 'id' or 'name' must be specified. Requires the 'Administer Quality Gates' permission. 
+        Delete a Quality Gate.<br>Parameter 'name' must be specified. Requires the 'Administer Quality Gates' permission. 
       operationId: api-qualitygates-destroy
       parameters:
-        - name: id
-          in: query
-          description: |
-            ID of the quality gate to delete. This parameter is deprecated. Use 'name' instead. 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
             Name of the quality gate to delete 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -9010,8 +9495,6 @@ paths:
                   qualityGate:
                     type: object
                     properties:
-                      id:
-                        type: string
                       name:
                         type: string
                       default:
@@ -9048,8 +9531,6 @@ paths:
                     items:
                       type: object
                       properties:
-                        id:
-                          type: string
                         name:
                           type: string
                         isDefault:
@@ -9073,15 +9554,23 @@ paths:
                               type: boolean
                             delegate:
                               type: boolean
+                            manageAiCodeAssurance:
+                              type: boolean
                         caycStatus:
                           type: string
-                  default:
-                    type: string
+                        hasStandardConditions:
+                          type: boolean
+                        hasMQRConditions:
+                          type: boolean
+                        isAiCodeSupported:
+                          type: boolean
                   actions:
                     type: object
                     properties:
                       create:
                         type: boolean
+                  default:
+                    type: string
         default:
           description: Error messages
           content:
@@ -9165,24 +9654,9 @@ paths:
                               type: string
                             comparator:
                               type: string
-                            periodIndex:
-                              type: integer
                             errorThreshold:
                               type: string
                             actualValue:
-                              type: string
-                      periods:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            index:
-                              type: integer
-                            mode:
-                              type: string
-                            date:
-                              type: string
-                            parameter:
                               type: string
                       period:
                         type: object
@@ -9207,24 +9681,91 @@ paths:
                       properties:
                         msg:
                           type: string
+  /api/qualitygates/remove_group:
+    post:
+      description: |
+        Remove the ability from a group to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-remove_group
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: groupName
+          in: query
+          description: |
+            Group name or 'anyone' (case insensitive) 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/qualitygates/remove_user:
+    post:
+      description: |
+        Remove the ability from an user to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-remove_user
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: login
+          in: query
+          description: |
+            User login 
+          required: true
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: not provided
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
   /api/qualitygates/rename:
     post:
       description: |
-        Rename a Quality Gate.<br>Either 'id' or 'currentName' must be specified. Requires the 'Administer Quality Gates' permission. 
+        Rename a Quality Gate.<br>'currentName' must be specified. Requires the 'Administer Quality Gates' permission. 
       operationId: api-qualitygates-rename
       parameters:
         - name: currentName
           in: query
           description: |
             Current name of the quality gate 
-          required: false
-          schema:
-            type: string
-        - name: id
-          in: query
-          description: |
-            ID of the quality gate to rename. This parameter is deprecated. Use 'currentName' instead. 
-          required: false
+          required: true
           schema:
             type: string
         - name: name
@@ -9257,18 +9798,11 @@ paths:
         Search for projects associated (or not) to a quality gate.<br/>Only authorized projects for the current user will be returned. 
       operationId: api-qualitygates-search
       parameters:
-        - name: gateId
-          in: query
-          description: |
-            Quality Gate ID. This parameter is deprecated. Use 'gateName' instead. 
-          required: false
-          schema:
-            type: string
         - name: gateName
           in: query
           description: |
             Quality Gate name 
-          required: false
+          required: true
           schema:
             type: string
         - name: page
@@ -9327,6 +9861,176 @@ paths:
                           type: string
                         selected:
                           type: boolean
+                        aiCodeAssurance:
+                          type: string
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/qualitygates/search_groups:
+    get:
+      description: |
+        List the groups that are allowed to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-search_groups
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: p
+          in: query
+          description: |
+            1-based page number 
+          required: false
+          schema:
+            type: string
+        - name: ps
+          in: query
+          description: |
+            Page size. Must be greater than 0. 
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: |
+            Limit search to group names that contain the supplied string. 
+          required: false
+          schema:
+            type: string
+        - name: selected
+          in: query
+          description: |
+            Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all). 
+          required: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paging:
+                    type: object
+                    properties:
+                      pageSize:
+                        type: integer
+                      total:
+                        type: integer
+                      pageIndex:
+                        type: integer
+                  groups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        selected:
+                          type: boolean
+        default:
+          description: Error messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        msg:
+                          type: string
+  /api/qualitygates/search_users:
+    get:
+      description: |
+        List the users that are allowed to edit a Quality Gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>Edit right on the specified quality gate</li></ul> 
+      operationId: api-qualitygates-search_users
+      parameters:
+        - name: gateName
+          in: query
+          description: |
+            Quality Gate name 
+          required: true
+          schema:
+            type: string
+        - name: p
+          in: query
+          description: |
+            1-based page number 
+          required: false
+          schema:
+            type: string
+        - name: ps
+          in: query
+          description: |
+            Page size. Must be greater than 0. 
+          required: false
+          schema:
+            type: string
+        - name: q
+          in: query
+          description: |
+            Limit search to names or logins that contain the supplied string. 
+          required: false
+          schema:
+            type: string
+        - name: selected
+          in: query
+          description: |
+            Depending on the value, show only selected items (selected=selected), deselected items (selected=deselected), or all items with their selection status (selected=all). 
+          required: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  paging:
+                    type: object
+                    properties:
+                      pageSize:
+                        type: integer
+                      total:
+                        type: integer
+                      pageIndex:
+                        type: integer
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        login:
+                          type: string
+                        name:
+                          type: string
+                        avatar:
+                          type: string
+                        selected:
+                          type: boolean
         default:
           description: Error messages
           content:
@@ -9347,18 +10051,11 @@ paths:
         Associate a project to a quality gate.<br>Requires one of the following permissions:<ul> <li>'Administer Quality Gates'</li> <li>'Administer' right on the specified project</li></ul> 
       operationId: api-qualitygates-select
       parameters:
-        - name: gateId
-          in: query
-          description: |
-            Quality gate ID. This parameter is deprecated. Use 'gateName' instead. 
-          required: false
-          schema:
-            type: string
         - name: gateName
           in: query
           description: |
             Name of the quality gate 
-          required: false
+          required: true
           schema:
             type: string
         - name: projectKey
@@ -9388,21 +10085,14 @@ paths:
   /api/qualitygates/set_as_default:
     post:
       description: |
-        Set a quality gate as the default quality gate.<br>Either 'id' or 'name' must be specified. Requires the 'Administer Quality Gates' permission. 
+        Set a quality gate as the default quality gate.<br>Parameter 'name' must be specified. Requires the 'Administer Quality Gates' permission. 
       operationId: api-qualitygates-set_as_default
       parameters:
-        - name: id
-          in: query
-          description: |
-            ID of the quality gate to set as default. This parameter is deprecated. Use 'name' instead. 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
             Name of the quality gate to set as default 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -9428,18 +10118,11 @@ paths:
         Display the details of a quality gate 
       operationId: api-qualitygates-show
       parameters:
-        - name: id
-          in: query
-          description: |
-            ID of the quality gate. Either id or name must be set 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
             Name of the quality gate. Either id or name must be set 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -9450,8 +10133,6 @@ paths:
               schema:
                 type: object
                 properties:
-                  id:
-                    type: string
                   name:
                     type: string
                   conditions:
@@ -9468,6 +10149,8 @@ paths:
                         error:
                           type: string
                   isBuiltIn:
+                    type: boolean
+                  isDefault:
                     type: boolean
                   actions:
                     type: object
@@ -9486,7 +10169,13 @@ paths:
                         type: boolean
                       delegate:
                         type: boolean
+                      manageAiCodeAssurance:
+                        type: boolean
                   caycStatus:
+                    type: string
+                  isAiCodeSupported:
+                    type: boolean
+                  id:
                     type: string
         default:
           description: Error messages
@@ -9525,7 +10214,7 @@ paths:
         - name: metric
           in: query
           description: |
-            Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>alert_status</li><li>new_security_hotspots</li></ul> 
+            Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>new_security_hotspots</li><li>alert_status</li></ul> 
           required: true
           schema:
             type: string
@@ -9559,6 +10248,13 @@ paths:
         Activate a rule on a Quality Profile.<br> Requires one of the following permissions:<ul> <li>'Administer Quality Profiles'</li> <li>Edit right on the specified quality profile</li></ul> 
       operationId: api-qualityprofiles-activate_rule
       parameters:
+        - name: impacts
+          in: query
+          description: |
+            Override of impact severities for the rule. Cannot be used as the same time as 'severity'. Ignored if parameter reset is true. 
+          required: false
+          schema:
+            type: string
         - name: key
           in: query
           description: |
@@ -9570,6 +10266,13 @@ paths:
           in: query
           description: |
             Parameters as semi-colon list of <code>key=value</code>. Ignored if parameter reset is true. 
+          required: false
+          schema:
+            type: string
+        - name: prioritizedRule
+          in: query
+          description: |
+            Mark activated rule as prioritized, so all corresponding Issues will have to be fixed. 
           required: false
           schema:
             type: string
@@ -9590,7 +10293,7 @@ paths:
         - name: severity
           in: query
           description: |
-            Severity. Ignored if parameter reset is true. 
+            Severity. Cannot be used as the same time as 'impacts'.Ignored if parameter reset is true. 
           required: false
           schema:
             type: string
@@ -9624,6 +10327,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: active_impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Activation Software Quality Severities, i.e the impact severity of rules in Quality profiles. 
+          required: false
+          schema:
+            type: string
         - name: active_severities
           in: query
           description: |
@@ -9645,10 +10355,31 @@ paths:
           required: false
           schema:
             type: string
+        - name: cleanCodeAttributeCategories
+          in: query
+          description: |
+            Comma-separated list of Clean Code Attribute Categories 
+          required: false
+          schema:
+            type: string
         - name: cwe
           in: query
           description: |
             Comma-separated list of CWE identifiers. Use 'unknown' to select rules not associated to any CWE. 
+          required: false
+          schema:
+            type: string
+        - name: impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Software Quality Severities 
+          required: false
+          schema:
+            type: string
+        - name: impactSoftwareQualities
+          in: query
+          description: |
+            Comma-separated list of Software Qualities 
           required: false
           schema:
             type: string
@@ -9687,6 +10418,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: prioritizedRule
+          in: query
+          description: |
+            Mark activated rules as prioritized, so all corresponding Issues will have to be fixed. 
+          required: false
+          schema:
+            type: string
         - name: q
           in: query
           description: |
@@ -9697,7 +10435,7 @@ paths:
         - name: qprofile
           in: query
           description: |
-            Quality profile key to filter on. Used only if the parameter 'activation' is set. 
+            Quality profile key to filter on. Only rules of the same language as this profile are returned. By default only rules activated in this profile are returned. You can change that using the 'activation' parameter. 
           required: false
           schema:
             type: string
@@ -9805,7 +10543,7 @@ paths:
   /api/qualityprofiles/add_project:
     post:
       description: |
-        Associate a project with a quality profile.<br> Requires one of the following permissions:<ul> <li>'Administer Quality Profiles'</li> <li>Edit right on the specified quality profile</li> <li>Administer right on the specified project</li></ul> 
+        Associate a project with a quality profile.<br> Requires one of the following permissions:<ul> <li>'Administer Quality Profiles'</li> <li>Administer right on the specified project</li></ul> 
       operationId: api-qualityprofiles-add_project
       parameters:
         - name: language
@@ -9934,9 +10672,16 @@ paths:
   /api/qualityprofiles/changelog:
     get:
       description: |
-        Get the history of changes on a quality profile: rule activation/deactivation, change in parameters/severity. Events are ordered by date in descending order (most recent first). 
+        Get the history of changes on a quality profile: rule activation/deactivation, change in parameters/severity/impacts. Events are ordered by date in descending order (most recent first). 
       operationId: api-qualityprofiles-changelog
       parameters:
+        - name: filterMode
+          in: query
+          description: |
+            If specified, will return changelog events related to MQR or STANDARD mode. If not specified, all the events are returned 
+          required: false
+          schema:
+            type: string
         - name: language
           in: query
           description: |
@@ -10009,14 +10754,29 @@ paths:
                           type: string
                         authorName:
                           type: string
+                        sonarQubeVersion:
+                          type: string
                         ruleKey:
                           type: string
                         ruleName:
                           type: string
+                        cleanCodeAttributeCategory:
+                          type: string
+                        impacts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              softwareQuality:
+                                type: string
+                              severity:
+                                type: string
                         params:
                           type: object
                           properties:
                             severity:
+                              type: string
+                            prioritizedRule:
                               type: string
         default:
           description: Error messages
@@ -10129,10 +10889,6 @@ paths:
                         type: string
                       key:
                         type: string
-                  warnings:
-                    type: array
-                    items:
-                      type: string
         default:
           description: Error messages
           content:
@@ -10197,6 +10953,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: active_impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Activation Software Quality Severities, i.e the impact severity of rules in Quality profiles. 
+          required: false
+          schema:
+            type: string
         - name: active_severities
           in: query
           description: |
@@ -10218,10 +10981,31 @@ paths:
           required: false
           schema:
             type: string
+        - name: cleanCodeAttributeCategories
+          in: query
+          description: |
+            Comma-separated list of Clean Code Attribute Categories 
+          required: false
+          schema:
+            type: string
         - name: cwe
           in: query
           description: |
             Comma-separated list of CWE identifiers. Use 'unknown' to select rules not associated to any CWE. 
+          required: false
+          schema:
+            type: string
+        - name: impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Software Quality Severities 
+          required: false
+          schema:
+            type: string
+        - name: impactSoftwareQualities
+          in: query
+          description: |
+            Comma-separated list of Software Qualities 
           required: false
           schema:
             type: string
@@ -10270,7 +11054,7 @@ paths:
         - name: qprofile
           in: query
           description: |
-            Quality profile key to filter on. Used only if the parameter 'activation' is set. 
+            Quality profile key to filter on. Only rules of the same language as this profile are returned. By default only rules activated in this profile are returned. You can change that using the 'activation' parameter. 
           required: false
           schema:
             type: string
@@ -10411,13 +11195,6 @@ paths:
         Export a quality profile. 
       operationId: api-qualityprofiles-export
       parameters:
-        - name: exporterKey
-          in: query
-          description: |
-            Output format. If left empty, the same format as api/qualityprofiles/backup is used. Possible values are described by api/qualityprofiles/exporters. 
-          required: false
-          schema:
-            type: string
         - name: language
           in: query
           description: |
@@ -10456,7 +11233,7 @@ paths:
   /api/qualityprofiles/exporters:
     get:
       description: |
-        Lists available profile export formats. 
+        Deprecated. No more custom profile exporters. 
       operationId: api-qualityprofiles-exporters
       responses:
         2XX:
@@ -10468,17 +11245,7 @@ paths:
                 properties:
                   exporters:
                     type: array
-                    items:
-                      type: object
-                      properties:
-                        key:
-                          type: string
-                        name:
-                          type: string
-                        languages:
-                          type: array
-                          items:
-                            type: string
+                    items: {}
         default:
           description: Error messages
           content:
@@ -10508,17 +11275,7 @@ paths:
                 properties:
                   importers:
                     type: array
-                    items:
-                      type: object
-                      properties:
-                        key:
-                          type: string
-                        name:
-                          type: string
-                        languages:
-                          type: array
-                          items:
-                            type: string
+                    items: {}
         default:
           description: Error messages
           content:
@@ -10621,7 +11378,7 @@ paths:
   /api/qualityprofiles/projects:
     get:
       description: |
-        List projects with their association status regarding a quality profile <br/>See api/qualityprofiles/search in order to get the Quality Profile Key 
+        List projects with their association status regarding a quality profile. <br/>Only projects explicitly bound to the profile are returned, those associated with the profile because it is the default one are not. <br/>See api/qualityprofiles/search in order to get the Quality Profile Key. 
       operationId: api-qualityprofiles-projects
       parameters:
         - name: key
@@ -10958,11 +11715,25 @@ paths:
         Create a custom rule.<br>Requires the 'Administer Quality Profiles' permission 
       operationId: api-rules-create
       parameters:
+        - name: cleanCodeAttribute
+          in: query
+          description: |
+            Clean code attribute 
+          required: false
+          schema:
+            type: string
         - name: customKey
           in: query
           description: |
             Key of the custom rule 
           required: true
+          schema:
+            type: string
+        - name: impacts
+          in: query
+          description: |
+            Impacts as semi-colon list of &lt;software_quality&gt;=&lt;severity&gt; 
+          required: false
           schema:
             type: string
         - name: markdownDescription
@@ -10982,7 +11753,7 @@ paths:
         - name: params
           in: query
           description: |
-            Parameters as semi-colon list of <key>=<value>, for example 'params=key1=v1;key2=v2' (Only for custom rule) 
+            Parameters as semi-colon list of &lt;key&gt;=&lt;value&gt; 
           required: false
           schema:
             type: string
@@ -11010,7 +11781,7 @@ paths:
         - name: templateKey
           in: query
           description: |
-            Key of the template rule in order to create a custom rule (mandatory for custom rule) 
+            Key of the template rule in order to create a custom rule 
           required: true
           schema:
             type: string
@@ -11079,6 +11850,19 @@ paths:
                         type: boolean
                       type:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      cleanCodeAttribute:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
         default:
           description: Error messages
           content:
@@ -11189,6 +11973,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: active_impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Activation Software Quality Severities, i.e the impact severity of rules in Quality profiles. 
+          required: false
+          schema:
+            type: string
         - name: active_severities
           in: query
           description: |
@@ -11210,6 +12001,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: cleanCodeAttributeCategories
+          in: query
+          description: |
+            Comma-separated list of Clean Code Attribute Categories 
+          required: false
+          schema:
+            type: string
         - name: cwe
           in: query
           description: |
@@ -11228,6 +12026,20 @@ paths:
           in: query
           description: |
             Comma-separated list of the facets to be computed. No facet is computed by default. 
+          required: false
+          schema:
+            type: string
+        - name: impactSeverities
+          in: query
+          description: |
+            Comma-separated list of Software Quality Severities 
+          required: false
+          schema:
+            type: string
+        - name: impactSoftwareQualities
+          in: query
+          description: |
+            Comma-separated list of Software Qualities 
           required: false
           schema:
             type: string
@@ -11280,6 +12092,13 @@ paths:
           required: false
           schema:
             type: string
+        - name: prioritizedRule
+          in: query
+          description: |
+            Filter on prioritized rules. Ignored if the parameter 'qprofile' is not set. 
+          required: false
+          schema:
+            type: string
         - name: ps
           in: query
           description: |
@@ -11297,7 +12116,7 @@ paths:
         - name: qprofile
           in: query
           description: |
-            Quality profile key to filter on. Used only if the parameter 'activation' is set. 
+            Quality profile key to filter on. Only rules of the same language as this profile are returned. By default only rules activated in this profile are returned. You can change that using the 'activation' parameter. 
           required: false
           schema:
             type: string
@@ -11431,6 +12250,19 @@ paths:
                           type: boolean
                         type:
                           type: string
+                        cleanCodeAttributeCategory:
+                          type: string
+                        cleanCodeAttribute:
+                          type: string
+                        impacts:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              softwareQuality:
+                                type: string
+                              severity:
+                                type: string
                         descriptionSections:
                           type: array
                           items:
@@ -11625,6 +12457,19 @@ paths:
                         type: boolean
                       type:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      cleanCodeAttribute:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
                       descriptionSections:
                         type: array
                         items:
@@ -11656,6 +12501,8 @@ paths:
                           type: string
                         severity:
                           type: string
+                        prioritizedRule:
+                          type: boolean
                         params:
                           type: array
                           items:
@@ -11731,6 +12578,13 @@ paths:
         Update an existing rule.<br>Requires the 'Administer Quality Profiles' permission 
       operationId: api-rules-update
       parameters:
+        - name: impacts
+          in: query
+          description: |
+            Rule impacts, semicolon-separated (Only when updating a custom rule impact severity) 
+          required: false
+          schema:
+            type: string
         - name: key
           in: query
           description: |
@@ -11738,7 +12592,7 @@ paths:
           required: true
           schema:
             type: string
-        - name: markdown_description
+        - name: markdownDescription
           in: query
           description: |
             Rule description (mandatory for custom rule and manual rule) in <a href='/formatting/help'>markdown format</a> 
@@ -11864,8 +12718,6 @@ paths:
                               type: string
                             type:
                               type: string
-                      debtOverloaded:
-                        type: boolean
                       remFnOverloaded:
                         type: boolean
                       scope:
@@ -11874,6 +12726,19 @@ paths:
                         type: boolean
                       type:
                         type: string
+                      cleanCodeAttributeCategory:
+                        type: string
+                      cleanCodeAttribute:
+                        type: string
+                      impacts:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            softwareQuality:
+                              type: string
+                            severity:
+                              type: string
         default:
           description: Error messages
           content:
@@ -12000,7 +12865,7 @@ paths:
         - name: component
           in: query
           description: |
-            Component key 
+            Component key. Only keys for projects, applications, portfolios or subportfolios are accepted. 
           required: false
           schema:
             type: string
@@ -12037,7 +12902,7 @@ paths:
         - name: component
           in: query
           description: |
-            Component key 
+            Component key. Only keys for projects, applications, portfolios or subportfolios are accepted. 
           required: false
           schema:
             type: string
@@ -12358,7 +13223,7 @@ paths:
   /api/system/health:
     get:
       description: |
-        Provide health status of SonarQube.<p>Although global health is calculated based on both application and search nodes, detailed information is returned only for application nodes.</p><p> <ul> <li>GREEN: SonarQube is fully operational</li> <li>YELLOW: SonarQube is usable, but it needs attention in order to be fully operational</li> <li>RED: SonarQube is not operational</li> </ul></p> 
+        Provide health status of SonarQube.<p>Although global health is calculated based on both application and search nodes, detailed information is returned only for application nodes.</p><p> <ul> <li>GREEN: SonarQube is fully operational</li> <li>YELLOW: SonarQube is usable, but it needs attention in order to be fully operational</li> <li>RED: SonarQube is not operational</li> </ul></p><br>Requires the 'Administer System' permission or system passcode (see WEB_SYSTEM_PASS_CODE in sonar.properties).<br>When SonarQube is in safe mode (waiting or running a database upgrade), only the authentication with a system passcode is supported. 
       operationId: api-system-health
       responses:
         2XX:
@@ -13040,8 +13905,6 @@ paths:
                         type: string
                       sonar.autoDatabaseUpgrade:
                         type: string
-                      sonar.blueGreenEnabled:
-                        type: string
                       sonar.buildbreaker.skip:
                         type: string
                       sonar.c.predefinedMacros:
@@ -13218,10 +14081,10 @@ paths:
         Get system logs in plain-text format. Requires system administration permission. 
       operationId: api-system-logs
       parameters:
-        - name: process
+        - name: name
           in: query
           description: |
-            Process to get logs from 
+            Name of the logs to get 
           required: false
           schema:
             type: string
@@ -13439,6 +14302,10 @@ paths:
                                     type: boolean
                   latestLTS:
                     type: string
+                  latestLTA:
+                    type: string
+                  installedVersionActive:
+                    type: boolean
                   updateCenterRefresh:
                     type: string
         default:
@@ -13458,16 +14325,9 @@ paths:
   /api/user_groups/add_user:
     post:
       description: |
-        Add a user to a group.<br />'id' or 'name' must be provided.<br />Requires the following permission: 'Administer System'. 
+        Add a user to a group.<br />'name' must be provided.<br />Requires the following permission: 'Administer System'. 
       operationId: api-user_groups-add_user
       parameters:
-        - name: id
-          in: query
-          description: |
-            Group id, use 'name' instead 
-          required: false
-          schema:
-            type: string
         - name: login
           in: query
           description: |
@@ -13479,7 +14339,7 @@ paths:
           in: query
           description: |
             Group name 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -13559,21 +14419,14 @@ paths:
   /api/user_groups/delete:
     post:
       description: |
-        Delete a group. The default groups cannot be deleted.<br/>'id' or 'name' must be provided.<br />Requires the following permission: 'Administer System'. 
+        Delete a group. The default groups cannot be deleted.<br/>'name' must be provided.<br />Requires the following permission: 'Administer System'. 
       operationId: api-user_groups-delete
       parameters:
-        - name: id
-          in: query
-          description: |
-            Group id, use 'name' instead 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
             Group name 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -13596,16 +14449,9 @@ paths:
   /api/user_groups/remove_user:
     post:
       description: |
-        Remove a user from a group.<br />'id' or 'name' must be provided.<br>Requires the following permission: 'Administer System'. 
+        Remove a user from a group.<br />'name' must be provided.<br>Requires the following permission: 'Administer System'. 
       operationId: api-user_groups-remove_user
       parameters:
-        - name: id
-          in: query
-          description: |
-            Group id, use 'name' instead 
-          required: false
-          schema:
-            type: string
         - name: login
           in: query
           description: |
@@ -13617,7 +14463,7 @@ paths:
           in: query
           description: |
             Group name 
-          required: false
+          required: true
           schema:
             type: string
       responses:
@@ -13647,6 +14493,13 @@ paths:
           in: query
           description: |
             Comma-separated list of the fields to be returned in response. All the fields are returned by default. 
+          required: false
+          schema:
+            type: string
+        - name: managed
+          in: query
+          description: |
+            Return managed or non-managed groups. Only available for managed instances, throws for non-managed instances. 
           required: false
           schema:
             type: string
@@ -13693,8 +14546,6 @@ paths:
                     items:
                       type: object
                       properties:
-                        id:
-                          type: string
                         name:
                           type: string
                         description:
@@ -13702,6 +14553,8 @@ paths:
                         membersCount:
                           type: integer
                         default:
+                          type: boolean
+                        managed:
                           type: boolean
         default:
           description: Error messages
@@ -13726,21 +14579,14 @@ paths:
         - name: currentName
           in: query
           description: |
-            Name of the group to be updated. Mandatory unless 'id' is used. 
-          required: false
+            Name of the group to be updated. 
+          required: true
           schema:
             type: string
         - name: description
           in: query
           description: |
             New optional description for the group. A group description cannot be larger than 200 characters. If value is not defined, then description is not changed. 
-          required: false
-          schema:
-            type: string
-        - name: id
-          in: query
-          description: |
-            Identifier of the group. Use 'currentName' instead. 
           required: false
           schema:
             type: string
@@ -13774,18 +14620,11 @@ paths:
         Search for users with membership information with respect to a group.<br>Requires the following permission: 'Administer System'. 
       operationId: api-user_groups-users
       parameters:
-        - name: id
-          in: query
-          description: |
-            Group id, use 'name' instead 
-          required: false
-          schema:
-            type: string
         - name: name
           in: query
           description: |
             Group name 
-          required: false
+          required: true
           schema:
             type: string
         - name: p
@@ -13834,6 +14673,8 @@ paths:
                         name:
                           type: string
                         selected:
+                          type: boolean
+                        managed:
                           type: boolean
                   paging:
                     type: object
@@ -14064,7 +14905,7 @@ paths:
         - name: password
           in: query
           description: |
-            New password 
+            The password needs to fulfill the following requirements: at least 12 characters and contain at least one uppercase character, one lowercase character, one digit and one special character. 
           required: true
           schema:
             type: string
@@ -14240,28 +15081,6 @@ paths:
                       properties:
                         msg:
                           type: string
-  /api/users/dismiss_sonarlint_ad:
-    post:
-      description: |
-        Dismiss SonarLint advertisement. Deprecated since 9.6, replaced api/users/dismiss_notice 
-      operationId: api-users-dismiss_sonarlint_ad
-      responses:
-        2XX:
-          description: not provided
-        default:
-          description: Error messages
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  errors:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        msg:
-                          type: string
   /api/users/groups:
     get:
       description: |
@@ -14352,7 +15171,7 @@ paths:
   /api/users/search:
     get:
       description: |
-        Get a list of users. By default, only active users are returned.<br/>The following fields are only returned when user has Administer System permission or for logged-in in user :<ul> <li>'email'</li> <li>'externalIdentity'</li> <li>'externalProvider'</li> <li>'groups'</li> <li>'lastConnectionDate'</li> <li>'tokensCount'</li></ul>Field 'lastConnectionDate' is only updated every hour, so it may not be accurate, for instance when a user authenticates many times in less than one hour. 
+        Get a list of users. By default, only active users are returned.<br/>The following fields are only returned when user has Administer System permission or for logged-in in user :<ul> <li>'email'</li> <li>'externalIdentity'</li> <li>'externalProvider'</li> <li>'groups'</li> <li>'lastConnectionDate'</li> <li>'sonarLintLastConnectionDate'</li> <li>'tokensCount'</li></ul>Field 'lastConnectionDate' is only updated every hour, so it may not be accurate, for instance when a user authenticates many times in less than one hour. 
       operationId: api-users-search
       parameters:
         - name: deactivated
@@ -14366,6 +15185,27 @@ paths:
           in: query
           description: |
             Find a user by its external identity (ie. its login in the Identity Provider). This is case sensitive and only available with Administer System permission. 
+          required: false
+          schema:
+            type: string
+        - name: lastConnectedAfter
+          in: query
+          description: |
+            Filter the users based on the last connection date field. Only users who interacted with this instance at or after the date will be returned. The format must be ISO 8601 datetime format (YYYY-MM-DDThh:mm:ss±hhmm) 
+          required: false
+          schema:
+            type: string
+        - name: lastConnectedBefore
+          in: query
+          description: |
+            Filter the users based on the last connection date field. Only users that never connected or who interacted with this instance at or before the date will be returned. The format must be ISO 8601 datetime format (YYYY-MM-DDThh:mm:ss±hhmm) 
+          required: false
+          schema:
+            type: string
+        - name: managed
+          in: query
+          description: |
+            Return managed or non-managed users. Only available for managed instances, throws for non-managed instances. 
           required: false
           schema:
             type: string
@@ -14386,7 +15226,21 @@ paths:
         - name: q
           in: query
           description: |
-            Filter on login, name and email.<br />This parameter can either be case sensitive and perform an exact match, or case insensitive and perform a partial match (contains), depending on the scenario:<br /><ul> <li> If the search query is <em>less or equal to 15 characters</em>, then the query is <em>case insensitive</em>, and will match any login, name, or email, that <em>contains</em> the search query. </li> <li> If the search query is <em>greater than 15 characters</em>, then the query becomes <em>case sensitive</em>, and will match any login, name, or email, that <em>exactly matches</em> the search query. </li></ul> 
+            Filter on login, name and email.<br />This parameter performs a partial match (contains), it is case insensitive. 
+          required: false
+          schema:
+            type: string
+        - name: slLastConnectedAfter
+          in: query
+          description: |
+            Filter the users based on the sonar lint last connection date field Only users who interacted with this instance using SonarLint at or after the date will be returned. The format must be ISO 8601 datetime format (YYYY-MM-DDThh:mm:ss±hhmm) 
+          required: false
+          schema:
+            type: string
+        - name: slLastConnectedBefore
+          in: query
+          description: |
+            Filter the users based on the sonar lint last connection date field. Only users that never connected or who interacted with this instance using SonarLint at or before the date will be returned. The format must be ISO 8601 datetime format (YYYY-MM-DDThh:mm:ss±hhmm) 
           required: false
           schema:
             type: string
@@ -14433,6 +15287,12 @@ paths:
                         externalProvider:
                           type: string
                         avatar:
+                          type: string
+                        lastConnectionDate:
+                          type: string
+                        managed:
+                          type: boolean
+                        sonarLintLastConnectionDate:
                           type: string
         default:
           description: Error messages
@@ -14544,7 +15404,7 @@ paths:
         - name: newExternalProvider
           in: query
           description: |
-            New external provider. Only authentication system installed are available. Use 'LDAP' identity provider for single server LDAP setup.User 'LDAP_{serverKey}' identity provider for multiple LDAP server setup. 
+            New external provider. Only authentication system installed are available. Use 'LDAP' identity provider for single server LDAP setup.Use 'LDAP_{serverKey}' identity provider for multiple LDAP servers setup. 
           required: true
           schema:
             type: string
