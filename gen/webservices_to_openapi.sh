@@ -33,7 +33,7 @@ do
 				echo "    get:"
 			fi
 			echo "      description: |2"
-			echo "        ${DESCRIPTION}"
+			echo "        ${DESCRIPTION%% }"
 			echo "      operationId: ${CONTROLLER////-}-${KEY}"
 
 			if [[ ${PARAMS_LEN} -gt 0 ]]; then
@@ -47,7 +47,7 @@ do
 					echo "        - name: ${PARAM_KEY}"
 					echo "          in: query"
 					echo "          description: |2"
-					echo "            ${PARAM_DESC}"
+					echo "            ${PARAM_DESC%% }"
 					echo "          required: ${PARAM_REQUIRED}"
 					echo "          schema:"
 					echo "            type: string"

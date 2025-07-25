@@ -28,7 +28,7 @@ Generate OpenAPI schema.
 Bundle one file.
 
 ```sh
-redocly bundle -d --remove-unused-components -o openapi.yml ./components/openapi.yml
+redocly bundle -d --remove-unused-components ./components/openapi.yml | yq 'explode(.)' > openapi.yml
 ```
 
 Verify OpenAPI schema format.
